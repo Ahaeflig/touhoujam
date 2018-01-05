@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: d505f15b4bc9416478c4747b8c1f5dca
+timeCreated: 1515189245
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: "_dummy_\u3057\u3063\u307D\u56DE\u8EE2"
+    100002: "_dummy_\u3057\u3063\u307D\u56DE\u8EE2_end"
+    100004: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2"
+    100006: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2_end"
+    100008: all
+    100010: body
+    100012: front
+    100014: hair
+    100016: hair_tale_ac
+    100018: head_ac2
+    100020: //RootNode
+    100022: ribon
+    100024: ribon_1
+    100026: ribon_2
+    100028: suku
+    100030: "\u3057\u3063\u307D"
+    100032: "\u3057\u3063\u307D\u5148"
+    100034: "\u3057\u3063\u307D\u5148_end"
+    100036: "\u3057\u3063\u307D\u56DE\u8EE2"
+    100038: "\u3057\u3063\u307D\u56DE\u8EE2_end"
+    100040: "\u30B5\u30A4\u30C9\u9AEA1.L"
+    100042: "\u30B5\u30A4\u30C9\u9AEA1.R"
+    100044: "\u30B5\u30A4\u30C9\u9AEA2.L"
+    100046: "\u30B5\u30A4\u30C9\u9AEA2.R"
+    100048: "\u30B5\u30A4\u30C9\u9AEA\u5143.L"
+    100050: "\u30B5\u30A4\u30C9\u9AEA\u5143.R"
+    100052: "\u30B5\u30A4\u30C9\u9AEA\u5148.L"
+    100054: "\u30B5\u30A4\u30C9\u9AEA\u5148.L_end"
+    100056: "\u30B5\u30A4\u30C9\u9AEA\u5148.R"
+    100058: "\u30B5\u30A4\u30C9\u9AEA\u5148.R_end"
+    100060: "\u30BF\u30A4"
+    100062: "\u30BF\u30A42"
+    100064: "\u30BF\u30A43"
+    100066: "\u30BF\u30A43\u5148"
+    100068: "\u30BF\u30A43\u5148_end"
+    100070: "\u30BF\u30A44"
+    100072: "\u30BF\u30A44\u5148"
+    100074: "\u30BF\u30A44\u5148_end"
+    100076: "\u30EA\u30DC\u30F3"
+    100078: "\u30EA\u30DC\u30F3_end"
+    100080: "\u4E0B\u534A\u8EAB"
+    400000: "_dummy_\u3057\u3063\u307D\u56DE\u8EE2"
+    400002: "_dummy_\u3057\u3063\u307D\u56DE\u8EE2_end"
+    400004: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2"
+    400006: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2_end"
+    400008: all
+    400010: body
+    400012: front
+    400014: hair
+    400016: hair_tale_ac
+    400018: head_ac2
+    400020: //RootNode
+    400022: ribon
+    400024: ribon_1
+    400026: ribon_2
+    400028: suku
+    400030: "\u3057\u3063\u307D"
+    400032: "\u3057\u3063\u307D\u5148"
+    400034: "\u3057\u3063\u307D\u5148_end"
+    400036: "\u3057\u3063\u307D\u56DE\u8EE2"
+    400038: "\u3057\u3063\u307D\u56DE\u8EE2_end"
+    400040: "\u30B5\u30A4\u30C9\u9AEA1.L"
+    400042: "\u30B5\u30A4\u30C9\u9AEA1.R"
+    400044: "\u30B5\u30A4\u30C9\u9AEA2.L"
+    400046: "\u30B5\u30A4\u30C9\u9AEA2.R"
+    400048: "\u30B5\u30A4\u30C9\u9AEA\u5143.L"
+    400050: "\u30B5\u30A4\u30C9\u9AEA\u5143.R"
+    400052: "\u30B5\u30A4\u30C9\u9AEA\u5148.L"
+    400054: "\u30B5\u30A4\u30C9\u9AEA\u5148.L_end"
+    400056: "\u30B5\u30A4\u30C9\u9AEA\u5148.R"
+    400058: "\u30B5\u30A4\u30C9\u9AEA\u5148.R_end"
+    400060: "\u30BF\u30A4"
+    400062: "\u30BF\u30A42"
+    400064: "\u30BF\u30A43"
+    400066: "\u30BF\u30A43\u5148"
+    400068: "\u30BF\u30A43\u5148_end"
+    400070: "\u30BF\u30A44"
+    400072: "\u30BF\u30A44\u5148"
+    400074: "\u30BF\u30A44\u5148_end"
+    400076: "\u30EA\u30DC\u30F3"
+    400078: "\u30EA\u30DC\u30F3_end"
+    400080: "\u4E0B\u534A\u8EAB"
+    2100000: ribon
+    2100002: head_ac2
+    2100004: hair
+    2100006: ribon_2
+    2100008: ribon_1
+    2100010: hair_tale_ac
+    4300000: ribon
+    4300002: head_ac2
+    4300004: hair
+    4300006: ribon_2
+    4300008: ribon_1
+    4300010: hair_tale_ac
+    9500000: //RootNode
+    13700000: hair
+    13700002: hair_tale_ac
+    13700004: head_ac2
+    13700006: ribon
+    13700008: ribon_1
+    13700010: ribon_2
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

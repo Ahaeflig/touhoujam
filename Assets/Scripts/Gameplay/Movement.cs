@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour {
 	public Transform playerModel;
 	public float CameraMaxVerticalAngleSin;
 	private bool isJumping;
+	public Animator animator;
 
 	//Spell
 	public float TimeAffect;
@@ -25,6 +26,8 @@ public class Movement : MonoBehaviour {
     public Rigidbody rb;
 	public Transform cameraTransform;
 	private Vector3 characterDirection;
+	private bool isFalling;
+
 	// Use this for initialization
 	void Start () {
 		isJumping = false;
@@ -65,14 +68,19 @@ public class Movement : MonoBehaviour {
 		{
 			isMoving = true;
 			characterDirection = Vector3.Normalize(transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"));
+			animator.speed = Mathf.Min(1, Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal")));
+			animator.SetBool("isWalking", true);
 		}
 		else
 		{
 			isMoving = false;
+			animator.SetBool("isWalking", false);
+			animator.speed = 1;
 		}
 		if (Mathf.Abs(rb.velocity.y) - 0.05f < 0)
 		{
 			isJumping = false;
+			animator.SetBool("isJumping", false);
 		}
 		else
 		{
@@ -81,10 +89,20 @@ public class Movement : MonoBehaviour {
 		
 		if (isJumping)
 			rb.velocity -= MoreGravity * time * transform.up;
-
+		if (rb.velocity.y < -0.2f)
+		{
+			isFalling = true;
+			animator.SetBool("isFalling", true);
+		}
+		else
+		{
+			isFalling = false;
+			animator.SetBool("isFalling", false);
+		}
 		if (Input.GetButtonDown(jump) && !isJumping)
 		{
 			rb.AddForce(transform.up * JumpForce, ForceMode.Impulse);
+			animator.SetBool("isJumping", true);
 		}
 
 		var cameraRotation = cameraTransform.rotation;
