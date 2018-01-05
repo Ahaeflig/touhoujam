@@ -52,11 +52,7 @@ public class Movement : MonoBehaviour {
         //	Debug.DrawLine(ray.origin, col.point, Color.red);
         //else
         //	Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-
     
-        Debug.Log(Input.GetButtonDown("JumpPS4"));
-
-
         if (isMoving || Mathf.Abs(Input.GetAxis(RX)) != 0)
 		{
 			float angle = Vector3.SignedAngle(playerModel.forward, characterDirection, transform.up);
