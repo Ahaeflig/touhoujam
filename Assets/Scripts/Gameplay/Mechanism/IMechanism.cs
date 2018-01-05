@@ -1,4 +1,4 @@
 ﻿internal interface IMechanism
 {
-	void Activate();
+	bool Activate();
 }

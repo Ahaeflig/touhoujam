@@ -5,7 +5,9 @@ using UnityEngine;
 public class CameraManagement : MonoBehaviour {
 
 	public GameObject Camera;
+	public GameObject CameraAnchor;
 	public float MaxDistanceCamera;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +22,10 @@ public class CameraManagement : MonoBehaviour {
 		{
 			Debug.DrawLine(transform.position, hit.point, Color.red);
 			Camera.transform.position = hit.point;
+		}
+		else
+		{
+			Camera.transform.position = CameraAnchor.transform.position;
 		}
 
 		//else

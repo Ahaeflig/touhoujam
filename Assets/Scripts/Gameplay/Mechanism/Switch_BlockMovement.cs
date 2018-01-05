@@ -25,7 +25,9 @@ public class Switch_BlockMovement : MonoBehaviour, IActivable {
 
 	public void Switch()
 	{
-		script.Activate();
+		if (!script.Activate())
+			return;
+
 		isEnabled = !isEnabled;
 		if (isEnabled)
 			GetComponent<Renderer>().material = MaterialOn;

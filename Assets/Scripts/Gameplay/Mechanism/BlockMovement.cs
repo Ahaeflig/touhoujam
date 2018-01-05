@@ -18,16 +18,21 @@ public class BlockMovement : MonoBehaviour, IMechanism {
 	// Update is called once per frame
 	void Update () {
 		if (isActivated)
-			Transition += (Transition >= 1f ? 0f : TransitionSpeed);
+			Transition = Mathf.Min(Transition + TransitionSpeed * Time.deltaTime, 1f);
 		else
-			Transition -= (Transition <= 0f ? 0f : TransitionSpeed);
+			Transition = Mathf.Max(Transition - TransitionSpeed * Time.deltaTime, 0f);
 
 		transform.position = Vector3.Lerp(From, To, Transition);
 	}
 
-	public void Activate()
+	public bool Activate()
 	{
 		if (Transition <= 0f || Transition >= 1f)
+		{
 			isActivated = !isActivated;
+			return true;
+		}
+
+		return false;
 	}
 }
