@@ -18,7 +18,7 @@ public class Interaction : MonoBehaviour {
 		{
 			RaycastHit hit;
 			Ray ray = Cam.ScreenPointToRay(new Vector3(0.5f * Screen.width, 0.5f * Screen.height, 0));
-			//Debug.DrawRay(ray, Color.red);
+			//Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
 			if (Physics.Raycast(ray, out hit, Range))
 			{
 				if (hit.collider.gameObject.tag.Equals("Switch"))
