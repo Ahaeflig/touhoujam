@@ -10,7 +10,6 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 	public Vector3[] ToLocation;
 	public Vector3[] ToRotation;
 	public Vector3[] ToScale;
-	private Quaternion previousRotation;
 	private int currentLocationState = 0;
 	private int currentRotationState = 0;
 	private int currentScaleState = 0;
@@ -34,8 +33,6 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 		ToLocation[0] = transform.position;
 		ToRotation[0] = transform.eulerAngles;
 		ToScale[0] = transform.localScale;
-
-		previousRotation = transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -48,7 +45,6 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 			currentLocationState = locationState;
 			currentRotationState = rotationState;
 			currentScaleState = scaleState;
-			previousRotation = transform.rotation;
 			Transition = 0f;
 		}
 

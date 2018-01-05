@@ -45,7 +45,6 @@ public class RelativeBlockTransformation : MonoBehaviour, IMechanism {
 
 			if (Rotate)
 			{
-				var currentAngle = previousRotation;
 				//var targetAngle = previousRotation + Rotation;
 				//transform.rotation = Quaternion.Lerp(transform.rotation, transform.rotation * Quaternion.AngleAxis(Rotation.x, transform.right), Transition);
 				transform.rotation = Quaternion.Slerp(previousRotation, previousRotation * Quaternion.Euler(Rotation), Transition);

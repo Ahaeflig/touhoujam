@@ -14,13 +14,9 @@ public class Movement : MonoBehaviour {
 	public float CameraMaxVerticalAngleSin;
 	private bool isJumping;
 
-	//Shooting
-	public GameObject seal;
-	public Camera Cam;
 
 	//Spell
 	public float TimeAffect;
-	public bool AlteredTime;
 
 
 	public Rigidbody rb;
@@ -31,13 +27,14 @@ public class Movement : MonoBehaviour {
 		isJumping = false;
 		characterDirection = transform.forward;
 		TimeAffect = 1f;
-		AlteredTime = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		// For curious maids
 		float time = Time.deltaTime * TimeAffect;
-		Ray ray = Cam.ScreenPointToRay(new Vector3(0.5f * Screen.width, 0.5f * Screen.height, 0));
+		
 		//RaycastHit col;
 		//if (Physics.Raycast(ray.origin, ray.direction, out col))
 		//	Debug.DrawLine(ray.origin, col.point, Color.red);
@@ -70,30 +67,8 @@ public class Movement : MonoBehaviour {
 		{
 			isJumping = true;
 		}
-		if (Input.GetButtonDown("Fire2"))
-		{
-			AlteredTime = !AlteredTime;
-			if (AlteredTime)
-			{
-				Time.timeScale = 0.2f;
-				TimeAffect = 5f;
-				Time.fixedDeltaTime = 0.02F * Time.timeScale;
-			}
-			else
-			{
-				Time.timeScale = 1f;
-				TimeAffect = 1f;
-				Time.fixedDeltaTime = 0.02F;
-
-			}
-		}
-		if (Input.GetButtonDown("Fire3"))
-		{
-			var o = Instantiate(seal, transform.position + transform.forward * 2, transform.rotation);
-			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit))
-				o.GetComponent<SealScript>().FixDirection(hit.point);
-		}
+		
+		
 
 		if (isJumping)
 			rb.velocity -= MoreGravity * time * transform.up;
@@ -102,10 +77,12 @@ public class Movement : MonoBehaviour {
 		{
 			rb.AddForce(transform.up * JumpForce, ForceMode.Impulse);
 		}
+
 		var cameraRotation = cameraTransform.rotation;
 		cameraTransform.Rotate(Input.GetAxis("RY") * transform.right * time * CameraSpeed, Space.World);
 		if (Mathf.Abs(Mathf.Sin(cameraTransform.eulerAngles.x * Mathf.Deg2Rad)) > CameraMaxVerticalAngleSin )
 			cameraTransform.rotation = cameraRotation;
+
 		transform.Rotate(Input.GetAxis("RX") * transform.up * time * CameraSpeed, Space.World);
 	}
 }
