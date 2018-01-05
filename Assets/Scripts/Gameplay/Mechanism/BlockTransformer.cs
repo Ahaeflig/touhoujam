@@ -10,6 +10,7 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 	public Vector3[] ToLocation;
 	public Vector3[] ToRotation;
 	public Vector3[] ToScale;
+	private Quaternion previousRotation;
 	private int currentLocationState = 0;
 	private int currentRotationState = 0;
 	private int currentScaleState = 0;
@@ -33,6 +34,8 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 		ToLocation[0] = transform.position;
 		ToRotation[0] = transform.eulerAngles;
 		ToScale[0] = transform.localScale;
+
+		previousRotation = transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -45,21 +48,23 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 			currentLocationState = locationState;
 			currentRotationState = rotationState;
 			currentScaleState = scaleState;
+			previousRotation = transform.rotation;
 			Transition = 0f;
 		}
 
 		transform.position = Vector3.Lerp(ToLocation[currentLocationState], ToLocation[locationState], Transition);
 		transform.eulerAngles = Vector3.Lerp(ToRotation[currentRotationState], ToRotation[rotationState], Transition);
+		//transform.rotation = Quaternion.Slerp(previousRotation, previousRotation * Quaternion.Euler(ToRotation[rotationState]), Transition);
 		transform.localScale = Vector3.Lerp(ToScale[currentScaleState], ToScale[scaleState], Transition);
 	}
 
-	public bool Activate(int locationState = 1, int rotationState = 1, int scaleState = 1, bool relative = true)
+	public bool Activate(MechanismInfo info)
 	{
 		if (Transition <= 0f || Transition >= 1f)
 		{
-			this.locationState = ((relative ? currentLocationState : 0) + locationState) % ToLocation.Length;
-			this.rotationState = ((relative ? currentRotationState : 0) + rotationState) % ToRotation.Length;
-			this.scaleState = ((relative ? currentScaleState : 0) + scaleState) % ToScale.Length;
+			this.locationState = ((info.isRelative ? currentLocationState : 0) + info.newLocationState) % ToLocation.Length;
+			this.rotationState = ((info.isRelative ? currentRotationState : 0) + info.newRotationState) % ToRotation.Length;
+			this.scaleState = ((info.isRelative ? currentScaleState : 0) + info.newScaleState) % ToScale.Length;
 			return true;
 		}
 

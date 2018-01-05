@@ -9,9 +9,17 @@ public class SwitchController : MonoBehaviour, IActivable {
 	private IMechanism script;
 	public Material MaterialOn;
 	public Material MaterialOff;
+	private MechanismInfo info;
 	// Use this for initialization
 	void Start () {
 		script = Target.GetComponent<IMechanism>();
+		info = new MechanismInfo
+		{
+			newLocationState = 1,
+			newRotationState = 1,
+			newScaleState = 1,
+			isRelative = true
+		};
 	}
 	
 	// Update is called once per frame
@@ -25,7 +33,7 @@ public class SwitchController : MonoBehaviour, IActivable {
 
 	public void Activate()
 	{
-		if (!script.Activate())
+		if (!script.Activate(info))
 			return;
 
 		isEnabled = !isEnabled;
