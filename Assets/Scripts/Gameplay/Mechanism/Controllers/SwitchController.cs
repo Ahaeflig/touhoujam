@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Switch_BlockMovement : MonoBehaviour, IActivable {
+public class SwitchController : MonoBehaviour, IActivable {
 
 	public GameObject Target;
 	public bool isEnabled;
@@ -23,7 +23,7 @@ public class Switch_BlockMovement : MonoBehaviour, IActivable {
 		//}
 	}
 
-	public void Switch()
+	public void Activate()
 	{
 		if (!script.Activate())
 			return;

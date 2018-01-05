@@ -1,4 +1,4 @@
 ﻿internal interface IActivable
 {
-	void Switch();
+	void Activate();
 }

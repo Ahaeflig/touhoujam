@@ -20,7 +20,7 @@ public class Interaction : MonoBehaviour {
 			{
 				print(hit);
 				if (hit.collider.gameObject.tag.Equals("Switch"))
-					hit.collider.gameObject.GetComponent<IActivable>().Switch();
+					hit.collider.gameObject.GetComponent<IActivable>().Activate();
 			}
 		}
 	}
