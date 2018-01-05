@@ -16,18 +16,18 @@ public class Switch_BlockMovement : MonoBehaviour, IActivable {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire1"))
-		{
-			isEnabled = !isEnabled;
-			SetState(isEnabled);
-		}
+		//if (Input.GetButtonDown("Fire1"))
+		//{
+		//	isEnabled = !isEnabled;
+		//	SetState(isEnabled);
+		//}
 	}
 
-	public void SetState(bool state)
+	public void Switch()
 	{
 		script.Activate();
-		isEnabled = state;
-		if (state)
+		isEnabled = !isEnabled;
+		if (isEnabled)
 			GetComponent<Renderer>().material = MaterialOn;
 		else
 			GetComponent<Renderer>().material = MaterialOff;
