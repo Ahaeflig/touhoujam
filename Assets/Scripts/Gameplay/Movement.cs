@@ -70,11 +70,19 @@ public class Movement : MonoBehaviour {
 			characterDirection = Vector3.Normalize(transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"));
 			animator.speed = Mathf.Min(1, Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal")));
 			animator.SetBool("isWalking", true);
+			if (Mathf.Abs(Input.GetAxis("Vertical")) >= 0.6f || Mathf.Abs(Input.GetAxis("Horizontal")) >= 0.6f)
+				animator.SetBool("isRunning", true);
+			else
+				animator.SetBool("isRunning", false);
+
+
 		}
 		else
 		{
 			isMoving = false;
 			animator.SetBool("isWalking", false);
+			animator.SetBool("isRunning", false);
+
 			animator.speed = 1;
 		}
 		if (Mathf.Abs(rb.velocity.y) - 0.05f < 0)
