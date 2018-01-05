@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 4963850683746476}
   - component: {fileID: 95995581315387480}
   m_Layer: 0
-  m_Name: suku_Reimu_orig
+  m_Name: suku_Reimu_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
