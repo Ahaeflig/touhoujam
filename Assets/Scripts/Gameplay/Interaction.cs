@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interaction : MonoBehaviour {
 
 	public GameObject PlayerModel;
+	public Camera Cam;
 	public float Range;
 	// Use this for initialization
 	void Start () {
@@ -16,9 +17,10 @@ public class Interaction : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1"))
 		{
 			RaycastHit hit;
-			if (Physics.Raycast(PlayerModel.transform.position, PlayerModel.transform.forward, out hit, Range))
+			Ray ray = Cam.ScreenPointToRay(new Vector3(0.5f * Screen.width, 0.5f * Screen.height, 0));
+			//Debug.DrawRay(ray, Color.red);
+			if (Physics.Raycast(ray, out hit, Range))
 			{
-				print(hit);
 				if (hit.collider.gameObject.tag.Equals("Switch"))
 					hit.collider.gameObject.GetComponent<IActivable>().Activate();
 			}
