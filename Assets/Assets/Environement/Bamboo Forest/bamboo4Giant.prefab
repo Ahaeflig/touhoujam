@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 19343728}
   - component: {fileID: 3350282}
   - component: {fileID: 2323548}
-  - component: {fileID: 13699876}
+  - component: {fileID: 65341422645955624}
   m_Layer: 0
   m_Name: bamboo4Giant
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 0, z: 23}
+  m_LocalPosition: {x: 124.25124, y: -3, z: 51.620888}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5983,19 +5983,6 @@ MonoBehaviour:
   optimizedSolidMaterial: {fileID: 2131188}
   optimizedCutoutMaterial: {fileID: 2147804}
   isInPreviewMode: 0
---- !u!136 &13699876
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 191138}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.8078066
-  m_Height: 18.121965
-  m_Direction: 1
-  m_Center: {x: -0.103075415, y: 9.060983, z: 0.044196278}
 --- !u!193 &19343728
 Tree:
   m_ObjectHideFlags: 1
@@ -6015,3 +6002,15 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191138}
   m_IsPrefabParent: 1
+--- !u!65 &65341422645955624
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1, y: 18, z: 2.36}
+  m_Center: {x: -0.102841705, y: 9.075371, z: 0.04385227}
