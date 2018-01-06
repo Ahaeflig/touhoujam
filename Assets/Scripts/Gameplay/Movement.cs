@@ -92,9 +92,10 @@ public class Movement : MonoBehaviour {
 		//	Debug.DrawLine(ray.origin, col.point, Color.red);
 		//else
 		//	Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+		Debug.DrawRay(transform.position, transform.forward, Color.blue);
         if (isMoving || Mathf.Abs(Input.GetAxis(RX)) != 0)
 		{
-			float angle = Vector3.SignedAngle(playerModel.forward, characterDirection, transform.up);
+			float angle = Vector3.SignedAngle(playerModel.forward, characterDirection, Vector3.up);
 			angle = Mathf.Min(Mathf.Abs(angle), MaxRotationSpeed) * (angle >= 0 ? 1 : -1);
 			playerModel.Rotate(0, angle, 0);
 			transform.Translate((transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")) * Speed * time, Space.World);
@@ -171,10 +172,12 @@ public class Movement : MonoBehaviour {
 		if (cs.Ready)
 		{
 			cameraTransform.Rotate(Input.GetAxis(RY) * Vector3.right * time * CameraSpeed, Space.Self);
-			transform.Rotate(Input.GetAxis(RX) * Vector3.up * time * CameraSpeed, Space.Self);
-		}
 		if (Mathf.Abs(Mathf.Sin(cameraTransform.eulerAngles.x * Mathf.Deg2Rad)) > CameraMaxVerticalAngleSin )
 			cameraTransform.rotation = cameraRotation;
+		else
+			transform.Rotate(Input.GetAxis(RX) * Vector3.up * time * CameraSpeed, Space.Self);
+
+		}
 
 
 	}

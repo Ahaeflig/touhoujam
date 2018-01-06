@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 95708188159742072}
   - component: {fileID: 54499369336281694}
   - component: {fileID: 65216025186145296}
+  - component: {fileID: 114045857015469744}
   m_Layer: 0
   m_Name: suku_Reimu_orig
   m_TagString: Untagged
@@ -667,7 +668,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928430489939842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.89, y: 1.05, z: 32.28}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4167688557729528}
@@ -753,7 +754,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1806246788690714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714374694309536}
@@ -781,13 +782,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1211656901038662}
-  m_LocalRotation: {x: -0.12873758, y: -0.07074514, z: 0.020994075, w: -0.9889293}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 46.22, y: 7.96, z: 6.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4167688557729528}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 14.927001, y: 8.003, z: -1.3820001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4190419430560606
 Transform:
   m_ObjectHideFlags: 1
@@ -1048,7 +1049,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895571617034122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4167688557729528}
@@ -1305,6 +1306,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114045857015469744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736001014162898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e4860206ad28c4bad10c427328a9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cooldown: 0
+  seal: {fileID: 1588187291285342, guid: 56bc16055d8bed447897b41947c74831, type: 2}
+  Cam: {fileID: 20847774988213560}
 --- !u!114 &114123133367966368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1320,7 +1335,7 @@ MonoBehaviour:
   focalLength: 20
   focalSize: 2
   aperture: 0.74
-  focalTransform: {fileID: 4034119866231554}
+  focalTransform: {fileID: 0}
   maxBlurSize: 1.31
   highResolution: 0
   blurType: 0
@@ -1476,6 +1491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialCharacters:
   - {fileID: 1736001014162898}
+  - {fileID: 0}
   PositionOffset: {x: 0, y: -0.5, z: 0}
 --- !u!114 &114759622504105882
 MonoBehaviour:
@@ -1490,7 +1506,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerModel: {fileID: 1736001014162898}
   Cam: {fileID: 20847774988213560}
-  Range: 6
+  Range: 8.5
+  Deadzone: 5
 --- !u!114 &114946452736603310
 MonoBehaviour:
   m_ObjectHideFlags: 1
