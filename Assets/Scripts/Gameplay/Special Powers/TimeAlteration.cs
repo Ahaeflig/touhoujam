@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeAlteration : MonoBehaviour {
+public class TimeAlteration : MonoBehaviour, ISpell {
 
 	public bool AlteredTime;
 	public float LimitedSpan;
 	public float Cooldown;
 	[Range(0.01f, 1f)]
 	public float TimeScale;
+	public bool Available;
 
 	private float currentCooldown;
 	private float currentSpan;
@@ -20,6 +21,8 @@ public class TimeAlteration : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!Available)
+			return;
 		if (Input.GetButtonDown("Spell") && currentCooldown >= Cooldown)
 		{
 			currentCooldown = 0f;
@@ -42,14 +45,30 @@ public class TimeAlteration : MonoBehaviour {
 		if (active)
 		{
 			Time.timeScale = TimeScale;
-			GetComponent<Movement>().TimeAffect = 1 / TimeScale;
+			transform.parent.GetComponent<Movement>().TimeAffect = 1 / TimeScale;
 			Time.fixedDeltaTime = 0.02F * Time.timeScale;
+			GetComponent<Animator>().speed = 1 / TimeScale;
 		}
 		else
 		{
 			Time.timeScale = 1f;
-			GetComponent<Movement>().TimeAffect = 1f;
+			transform.parent.GetComponent<Movement>().TimeAffect = 1f;
 			Time.fixedDeltaTime = 0.02F;
+			GetComponent<Animator>().speed = 1f;
+		}
+	}
+
+	public void HandleSwitch(bool idle)
+	{
+		if (idle)
+		{
+			Available = false;
+			AlteredTime = false;
+			SlowTime(false);
+		}
+		else
+		{
+			Available = true;
 		}
 	}
 }

@@ -59,11 +59,17 @@ public class CharacterSwitcher : MonoBehaviour {
 		GetComponent<Rigidbody>().useGravity = true;
 		GetComponent<Rigidbody>().isKinematic = false;
 		GetComponent<BoxCollider>().enabled = true;
+		var c = currentCharacter.GetComponent<ISpell>();
+		if (c != null)
+			c.HandleSwitch(false);
 	}
 
 	void SwitchCharacter(int index)
 	{
-		print("Switching");
+		var c = currentCharacter.GetComponent<ISpell>();
+		if (c != null)
+			c.HandleSwitch(true);
+
 		currentCharacter.transform.parent = null;
 		index = index % characters.Count;
 		currentCharacter.GetComponent<Rigidbody>().useGravity = true;
