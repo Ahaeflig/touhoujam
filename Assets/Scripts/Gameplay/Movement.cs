@@ -67,7 +67,7 @@ public class Movement : MonoBehaviour {
 		{
 			isMoving = true;
 			characterDirection = Vector3.Normalize(transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"));
-			animator.speed = Mathf.Min(1, Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal")));
+			animator.speed = Mathf.Min(1, Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))) * TimeAffect;
 			animator.SetBool("isWalking", true);
 			if (Mathf.Abs(Input.GetAxis("Vertical")) >= 0.6f || Mathf.Abs(Input.GetAxis("Horizontal")) >= 0.6f)
 				animator.SetBool("isRunning", true);
@@ -82,7 +82,7 @@ public class Movement : MonoBehaviour {
 			animator.SetBool("isWalking", false);
 			animator.SetBool("isRunning", false);
 
-			animator.speed = 1;
+			animator.speed = 1 * TimeAffect;
 		}
 		if (Mathf.Abs(rb.velocity.y) - 0.05f < 0)
 		{
@@ -95,7 +95,7 @@ public class Movement : MonoBehaviour {
 		}
 		
 		if (isJumping)
-			rb.velocity -= MoreGravity * time * transform.up;
+			rb.velocity -= MoreGravity * time * transform.up * TimeAffect;
 		if (rb.velocity.y < -0.2f)
 		{
 			isFalling = true;
@@ -108,7 +108,7 @@ public class Movement : MonoBehaviour {
 		}
 		if (Input.GetButtonDown(jump) && !isJumping)
 		{
-			rb.AddForce(transform.up * JumpForce, ForceMode.Impulse);
+			rb.AddForce(transform.up * JumpForce *TimeAffect, ForceMode.Impulse);
 			animator.SetBool("isJumping", true);
 		}
 
