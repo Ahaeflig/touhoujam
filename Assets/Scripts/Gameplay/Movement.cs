@@ -99,8 +99,6 @@ public class Movement : MonoBehaviour {
 			isJumping = true;
 		}
 		
-		if (isJumping)
-			rb.velocity -= MoreGravity * time * transform.up * TimeAffect;
 		if (rb.velocity.y < -1f)
 		{
 			isFalling = true;
@@ -110,22 +108,27 @@ public class Movement : MonoBehaviour {
 		{
 			isFalling = false;
 			animator.SetBool("isFalling", false);
+
 		}
+
+		if (isFalling || isJumping)
+			rb.velocity -= MoreGravity * Time.deltaTime * transform.up / Time.timeScale;
+
 		if (Input.GetButtonDown(jump) && !isJumping)
 		{
-			rb.AddForce(transform.up * JumpForce * TimeAffect, ForceMode.Impulse);
+			rb.AddForce(transform.up * JumpForce , ForceMode.Impulse);
 			animator.SetBool("isJumping", true);
 		}
 
 		var cameraRotation = cameraTransform.rotation;
 		if (cs.Ready)
 		{
-			transform.Rotate(Input.GetAxis(RX) * transform.up * time * CameraSpeed, Space.World);
-			cameraTransform.Rotate(Input.GetAxis(RY) * transform.right * time * CameraSpeed, Space.World);
+			cameraTransform.Rotate(Input.GetAxis(RY) * Vector3.right * time * CameraSpeed, Space.Self);
+			transform.Rotate(Input.GetAxis(RX) * Vector3.up * time * CameraSpeed, Space.Self);
 		}
-
 		if (Mathf.Abs(Mathf.Sin(cameraTransform.eulerAngles.x * Mathf.Deg2Rad)) > CameraMaxVerticalAngleSin )
 			cameraTransform.rotation = cameraRotation;
+
 
 	}
       

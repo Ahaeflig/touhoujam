@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class CameraManagement : MonoBehaviour {
 
-	public GameObject Camera;
+	public GameObject Cam;
 	public GameObject CameraAnchor;
 	public float MaxDistanceCamera;
 
-
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		RaycastHit hit;
-		Physics.Raycast(transform.position,  Camera.transform.position - transform.position, out hit, MaxDistanceCamera);
+		Physics.Raycast(transform.position,  Cam.transform.position - transform.position, out hit, MaxDistanceCamera);
+		//transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0);
 		if (hit.collider != null)
 		{
 			Debug.DrawLine(transform.position, hit.point, Color.red);
-			Camera.transform.position = hit.point;
+			Cam.transform.position = hit.point;
 		}
 		else
 		{
-			Camera.transform.position = CameraAnchor.transform.position;
+			Cam.transform.position = CameraAnchor.transform.position;
 		}
 
 		//else
