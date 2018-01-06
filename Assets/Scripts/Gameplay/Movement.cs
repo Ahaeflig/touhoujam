@@ -128,7 +128,10 @@ public class Movement : MonoBehaviour {
 		RaycastHit ray;
 		var grounded = Physics.Raycast(transform.position, -transform.up, out ray, RaycastDownRange);
 		Debug.DrawRay(transform.position, -transform.up * RaycastDownRange, Color.yellow);
-		if (!grounded || (!ray.collider.gameObject.tag.Equals("Wall") && !ray.collider.gameObject.tag.Equals("Switch")))
+		GameObject g = null;
+		if (ray.collider != null)
+			g = ray.collider.gameObject;
+		if (!grounded || (!g.tag.Equals("Wall") && !g.tag.Equals("Switch")))
 		{
 			if (rb.velocity.y > 0f)
 			{
@@ -145,13 +148,16 @@ public class Movement : MonoBehaviour {
 				isFalling = true;
 			}
 		}
-		else if ((ray.collider.gameObject.tag.Equals("Wall") || ray.collider.gameObject.tag.Equals("Switch")) && jumpIF <= 0f)
+		else if ((g.tag.Equals("Wall") || g.tag.Equals("Switch")) && jumpIF <= 0f)
 		{
 			animator.SetBool("isJumping", false);
 			animator.SetBool("isFalling", false);
 			isJumping = false;
 			isFalling = false;
 			JumpImpulse = Vector3.zero;
+			var c = g.GetComponent<IMechanism>();
+			if (c != null)
+				transform.position += c.GetGluedValue();
 		}
 
 		if (isFalling || isJumping)
@@ -176,6 +182,7 @@ public class Movement : MonoBehaviour {
 			cameraTransform.rotation = cameraRotation;
 		else
 			transform.Rotate(Input.GetAxis(RX) * Vector3.up * time * CameraSpeed, Space.Self);
+
 
 		}
 

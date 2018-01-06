@@ -10,12 +10,16 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 	public Vector3[] ToLocation;
 	public Vector3[] ToRotation;
 	public Vector3[] ToScale;
+	public bool GluedToPC;
 	private int currentLocationState = 0;
 	private int currentRotationState = 0;
 	private int currentScaleState = 0;
 	private int locationState = 0;
 	private int rotationState = 0;
 	private int scaleState = 0;
+
+	private Vector3 nextPos;
+	private Vector3 previousPos;
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +52,9 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 			Transition = 0f;
 		}
 
-		transform.localPosition = Vector3.Lerp(ToLocation[currentLocationState], ToLocation[locationState], Transition);
+		nextPos = Vector3.Lerp(ToLocation[currentLocationState], ToLocation[locationState], Transition);
+		previousPos = transform.localPosition;
+		transform.localPosition = nextPos;
 		transform.localEulerAngles = Vector3.Lerp(ToRotation[currentRotationState], ToRotation[rotationState], Transition);
 		//transform.rotation = Quaternion.Slerp(previousRotation, previousRotation * Quaternion.Euler(ToRotation[rotationState]), Transition);
 		transform.localScale = Vector3.Lerp(ToScale[currentScaleState], ToScale[scaleState], Transition);
@@ -65,5 +71,13 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 		}
 
 		return false;
+	}
+
+	public Vector3 GetGluedValue()
+	{
+		if (!GluedToPC && Transition != 0f)
+			return Vector3.zero;
+		else
+			return nextPos - previousPos;
 	}
 }

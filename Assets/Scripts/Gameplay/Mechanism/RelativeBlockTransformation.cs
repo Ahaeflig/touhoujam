@@ -29,6 +29,11 @@ public class RelativeBlockTransformation : MonoBehaviour, IMechanism {
 		return true;
 	}
 
+	public Vector3 GetGluedValue()
+	{
+		throw new System.NotImplementedException();
+	}
+
 	// Use this for initialization
 	void Start () {
 		Transition = 1f;
