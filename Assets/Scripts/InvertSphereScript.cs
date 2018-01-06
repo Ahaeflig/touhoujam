@@ -35,6 +35,7 @@ public class InvertSphereScript : MonoBehaviour {
 		Transition = 0f;
 		Goal = Vector3.zero;
 		fromScale = transform.localScale;
+		SetToKill = true;
 	}
 
 
