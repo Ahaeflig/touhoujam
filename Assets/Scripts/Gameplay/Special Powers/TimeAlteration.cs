@@ -51,6 +51,9 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 			Time.fixedDeltaTime = 0.02F * Time.timeScale;
 			GetComponent<Animator>().speed = 1 / TimeScale;
 			currentSphere = Instantiate(FXSphere, transform);
+			var rb = transform.parent.GetComponent<Rigidbody>();
+			rb.AddForce(Physics.gravity * (1/TimeScale - 1), ForceMode.Acceleration);
+			rb.mass *= (1 / TimeScale);
 		}
 		else
 		{
@@ -58,7 +61,9 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 			transform.parent.GetComponent<Movement>().TimeAffect = 1f;
 			Time.fixedDeltaTime = 0.02F;
 			GetComponent<Animator>().speed = 1f;
-			currentSphere.GetComponent<InvertSphereScript>().Kill();
+			transform.parent.GetComponent<Rigidbody>().AddForce(-Physics.gravity * (1 / TimeScale - 1), ForceMode.Acceleration);
+			if (currentSphere != null)
+				currentSphere.GetComponent<InvertSphereScript>().Kill();
 		}
 	}
 

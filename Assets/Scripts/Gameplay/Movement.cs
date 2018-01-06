@@ -96,7 +96,7 @@ public class Movement : MonoBehaviour {
 		}
 		
 		if (isJumping)
-			rb.velocity -= MoreGravity * time * transform.up * TimeAffect;
+			rb.velocity -= MoreGravity * time * transform.up / TimeAffect;
 		if (rb.velocity.y < -1f)
 		{
 			isFalling = true;
@@ -109,7 +109,7 @@ public class Movement : MonoBehaviour {
 		}
 		if (Input.GetButtonDown(jump) && !isJumping)
 		{
-			rb.AddForce(transform.up * JumpForce *TimeAffect, ForceMode.Impulse);
+			rb.AddForce(transform.up * JumpForce, ForceMode.Impulse);
 			animator.SetBool("isJumping", true);
 		}
 
