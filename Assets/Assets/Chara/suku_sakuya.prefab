@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 54032740025395008}
   - component: {fileID: 65358921873634418}
   m_Layer: 0
-  m_Name: suku_Sakuya
+  m_Name: suku_sakuya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
