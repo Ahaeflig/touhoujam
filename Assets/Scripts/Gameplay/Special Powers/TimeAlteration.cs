@@ -15,17 +15,26 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 	private float currentCooldown;
 	private float currentSpan;
 	private GameObject currentSphere;
+
+    private string spellInput = "Spell";
+
 	// Use this for initialization
 	void Start () {
 		currentCooldown = Cooldown;
 		currentSpan = LimitedSpan;
+
+        if (InputController.instance.IsPS4Controller())
+        {
+            spellInput = "SpellPS4";
+        }
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (!Available)
 			return;
-		if (Input.GetButtonDown("Spell") && currentCooldown >= Cooldown)
+		if (Input.GetButtonDown(spellInput) && currentCooldown >= Cooldown)
 		{
 			currentCooldown = 0f;
 			currentSpan = currentCooldown;
