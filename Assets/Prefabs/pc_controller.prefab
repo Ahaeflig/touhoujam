@@ -667,7 +667,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928430489939842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 63.89, y: 1.05, z: 32.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4167688557729528}
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   focalLength: 20
   focalSize: 2
   aperture: 0.74
-  focalTransform: {fileID: 0}
+  focalTransform: {fileID: 4034119866231554}
   maxBlurSize: 1.31
   highResolution: 0
   blurType: 0
@@ -1476,7 +1476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialCharacters:
   - {fileID: 1736001014162898}
-  - {fileID: 0}
   PositionOffset: {x: 0, y: -0.5, z: 0}
 --- !u!114 &114759622504105882
 MonoBehaviour:
