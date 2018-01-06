@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 351545223}
   m_Layer: 0
   m_Name: Cube (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 477211424}
   m_Layer: 0
   m_Name: pf
-  m_TagString: Switch
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 560616562}
   m_Layer: 0
   m_Name: ground_2
-  m_TagString: Switch
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 610926014}
   m_Layer: 0
   m_Name: Cylinder (1)
-  m_TagString: Switch
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 789847133}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 861913095}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1548,7 +1548,7 @@ GameObject:
   - component: {fileID: 884161770}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b08b3e42e7c0da40bbfe1e4d1190f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 2136364182}
+  Cam: {fileID: 2136364182}
   CameraAnchor: {fileID: 523946023}
   MaxDistanceCamera: 5
 --- !u!1 &974583973
@@ -1761,6 +1761,7 @@ GameObject:
   - component: {fileID: 974583978}
   - component: {fileID: 974583979}
   - component: {fileID: 974583980}
+  - component: {fileID: 974583975}
   m_Layer: 0
   m_Name: pc_controller
   m_TagString: Untagged
@@ -1783,6 +1784,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!135 &974583975
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974583973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &974583976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,14 +1810,18 @@ MonoBehaviour:
   Speed: 5
   CameraSpeed: 120
   MaxRotationSpeed: 12
-  JumpForce: 10
+  JumpForce: 15
   MoreGravity: 20
   playerModel: {fileID: 210535740}
   CameraMaxVerticalAngleSin: 0.8
   animator: {fileID: 210535739}
+  RaycastDownRange: 1
   TimeAffect: 0
   rb: {fileID: 974583974}
   cameraTransform: {fileID: 935022327}
+  JumpNoCheck: 0.1
+  gravityAcc: 0
+  AlteredTimeJumpMagicFactor: 3
 --- !u!4 &974583977
 Transform:
   m_ObjectHideFlags: 0
@@ -1842,7 +1859,7 @@ BoxCollider:
   m_GameObject: {fileID: 974583973}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2287,7 +2304,7 @@ GameObject:
   - component: {fileID: 1189696171}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Switch
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2434,7 +2451,7 @@ GameObject:
   - component: {fileID: 1283883730}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Switch
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2733,7 +2750,7 @@ GameObject:
   - component: {fileID: 1487951814}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2837,7 +2854,7 @@ GameObject:
   - component: {fileID: 1587658519}
   m_Layer: 0
   m_Name: ground (1)
-  m_TagString: Switch
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3350,7 +3367,7 @@ GameObject:
   - component: {fileID: 1936550408}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

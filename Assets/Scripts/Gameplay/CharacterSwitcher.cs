@@ -59,7 +59,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = true;
 		GetComponent<Rigidbody>().useGravity = true;
 		GetComponent<Rigidbody>().isKinematic = false;
-		GetComponent<BoxCollider>().enabled = true;
+		GetComponent<SphereCollider>().enabled = true;
 		var c = currentCharacter.GetComponent<ISpell>();
 		if (c != null)
 			c.HandleSwitch(false);
@@ -84,7 +84,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		transition = 0f;
 		GetComponent<Rigidbody>().useGravity = false;
 		GetComponent<Rigidbody>().isKinematic = true;
-		GetComponent<BoxCollider>().enabled = false;
+		GetComponent<SphereCollider>().enabled = false;
 
 		UpdateComponents();
 	}

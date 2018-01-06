@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour {
 	public float CameraMaxVerticalAngleSin;
 	private bool isJumping;
 	public Animator animator;
+	public float RaycastDownRange;
 
 	//Spell
 	public float TimeAffect;
@@ -27,14 +28,23 @@ public class Movement : MonoBehaviour {
 	public Transform cameraTransform;
 	private Vector3 characterDirection;
 	private bool isFalling;
-
+	private float jumpIF;
+	public float JumpNoCheck;
 	private CharacterSwitcher cs;
+	private bool rbFix;
+	public Vector3 trueVelocity { get; set; }
+	public float gravityAcc;
+	public Vector3 JumpImpulse { get; set; }
+	public float AlteredTimeJumpMagicFactor;
 
 	// Use this for initialization
 	void Start () {
+		gravityAcc = 0f;
 		isJumping = false;
 		characterDirection = transform.forward;
 		TimeAffect = 1f;
+		rbFix = false;
+		trueVelocity = rb.velocity;
 
         if (InputController.instance.IsPS4Controller())
         {
@@ -48,9 +58,32 @@ public class Movement : MonoBehaviour {
 		cs = GetComponent<CharacterSwitcher>();
     }
 
-    // Update is called once per frame
-    void Update () {
+	void FixedUpdate()
+	{
 
+		if (TimeAffect != 1f)
+		{
+			if (isFalling || isJumping)
+				gravityAcc += Time.deltaTime / Time.timeScale;
+			else
+				gravityAcc = 0f;
+
+			rbFix = true;
+			rb.velocity = new Vector3(trueVelocity.x, trueVelocity.y, trueVelocity.z) / Time.timeScale;
+			rb.velocity += Physics.gravity * gravityAcc * ((1 / Time.timeScale) - 1) + JumpImpulse;
+		}
+	}
+
+	void LateUpdate()
+	{
+		trueVelocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
+		//gravityAcc = 0f;
+	}
+
+	// Update is called once per frame
+	void Update () {
+		rb.velocity = rb.velocity * Time.timeScale;
+		rbFix = false;
 		// For curious maids
 		float time = Time.deltaTime * TimeAffect;
 
@@ -89,35 +122,49 @@ public class Movement : MonoBehaviour {
 			animator.speed = 1 * TimeAffect;
 		}
 		Debug.DrawRay(playerModel.position, rb.velocity, Color.cyan);
-		if (Mathf.Abs(rb.velocity.y) < 0.1f * TimeAffect)
-		{
-			isJumping = false;
-			animator.SetBool("isJumping", false);
-		}
-		else
-		{
-			isJumping = true;
-		}
-		
-		if (rb.velocity.y < -1f)
-		{
-			isFalling = true;
-			animator.SetBool("isFalling", true);
-		}
-		else
-		{
-			isFalling = false;
-			animator.SetBool("isFalling", false);
 
+		jumpIF = Mathf.Max(jumpIF - Time.deltaTime / Time.timeScale, 0f);
+		RaycastHit ray;
+		var grounded = Physics.Raycast(transform.position, -transform.up, out ray, RaycastDownRange);
+		Debug.DrawRay(transform.position, -transform.up * RaycastDownRange, Color.yellow);
+		if (!grounded || (!ray.collider.gameObject.tag.Equals("Wall") && !ray.collider.gameObject.tag.Equals("Switch")))
+		{
+			if (rb.velocity.y > 0f)
+			{
+				animator.SetBool("isJumping", true);
+				animator.SetBool("isFalling", false);
+				isJumping = true;
+				isFalling = false;
+			}
+			else
+			{
+				animator.SetBool("isJumping", false);
+				animator.SetBool("isFalling", true);
+				isJumping = false;
+				isFalling = true;
+			}
+		}
+		else if ((ray.collider.gameObject.tag.Equals("Wall") || ray.collider.gameObject.tag.Equals("Switch")) && jumpIF <= 0f)
+		{
+			animator.SetBool("isJumping", false);
+			animator.SetBool("isFalling", false);
+			isJumping = false;
+			isFalling = false;
+			JumpImpulse = Vector3.zero;
 		}
 
 		if (isFalling || isJumping)
-			rb.velocity -= MoreGravity * Time.deltaTime * transform.up / Time.timeScale;
+			rb.velocity -= MoreGravity * Time.deltaTime * transform.up;
 
-		if (Input.GetButtonDown(jump) && !isJumping)
+		if (Input.GetButtonDown(jump) && !isJumping && !isFalling)
 		{
-			rb.AddForce(transform.up * JumpForce , ForceMode.Impulse);
-			animator.SetBool("isJumping", true);
+			if (TimeAffect != 1f)
+				JumpImpulse = transform.up * JumpForce * TimeAffect / AlteredTimeJumpMagicFactor;
+			else
+				rb.AddForce(transform.up * JumpForce * TimeAffect, ForceMode.Impulse);
+
+			jumpIF = JumpNoCheck;
+			//animator.SetBool("isJumping", true);
 		}
 
 		var cameraRotation = cameraTransform.rotation;
