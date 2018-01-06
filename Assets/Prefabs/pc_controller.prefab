@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae342c3ffe302545a901a8501d650b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 7.5
   CameraSpeed: 120
   MaxRotationSpeed: 12
   JumpForce: 15
