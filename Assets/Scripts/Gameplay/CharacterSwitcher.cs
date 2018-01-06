@@ -11,7 +11,7 @@ public class CharacterSwitcher : MonoBehaviour {
 	private int currentIndex;
 	private GameObject currentCharacter;
 	private float transition;
-	private bool ready;
+	public bool Ready { get; set; }
 	private Vector3 fromPosition;
 	private Quaternion fromRotation;
 	public Vector3 PositionOffset;
@@ -27,11 +27,12 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentCharacter.GetComponent<BoxCollider>().enabled = false;
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = true;
 		transition = 1f;
+		Ready = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("SwitchCharacter"))
+		if (Input.GetButtonDown("SwitchCharacter") && Ready)
 			SwitchCharacter(currentIndex + 1);
 		if (transition < 1f)
 		{
@@ -41,7 +42,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		}
 		else
 		{
-			CompleteChange(ready);
+			CompleteChange(Ready);
 		}
 	}
 
@@ -50,7 +51,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		if (ready)
 			return;
 
-		ready = true;
+		this.Ready = true;
 		currentCharacter.transform.parent = transform;
 		currentCharacter.transform.localPosition = PositionOffset;
 		currentCharacter.GetComponent<Rigidbody>().useGravity = false;
@@ -79,7 +80,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentIndex = index;
 		fromPosition = transform.position;
 		fromRotation= transform.rotation;
-		ready = false;
+		Ready = false;
 		transition = 0f;
 		GetComponent<Rigidbody>().useGravity = false;
 		GetComponent<Rigidbody>().isKinematic = true;

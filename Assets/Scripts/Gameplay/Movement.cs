@@ -28,6 +28,8 @@ public class Movement : MonoBehaviour {
 	private Vector3 characterDirection;
 	private bool isFalling;
 
+	private CharacterSwitcher cs;
+
 	// Use this for initialization
 	void Start () {
 		isJumping = false;
@@ -42,6 +44,8 @@ public class Movement : MonoBehaviour {
         }
 
         Debug.Log(RY);
+
+		cs = GetComponent<CharacterSwitcher>();
     }
 
     // Update is called once per frame
@@ -63,7 +67,7 @@ public class Movement : MonoBehaviour {
 			transform.Translate((transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")) * Speed * time, Space.World);
 
 		}
-		if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+		if (cs.Ready && (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0))
 		{
 			isMoving = true;
 			characterDirection = Vector3.Normalize(transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"));
@@ -96,7 +100,7 @@ public class Movement : MonoBehaviour {
 		}
 		
 		if (isJumping)
-			rb.velocity -= MoreGravity * time * transform.up / TimeAffect;
+			rb.velocity -= MoreGravity * time * transform.up * TimeAffect;
 		if (rb.velocity.y < -1f)
 		{
 			isFalling = true;
@@ -109,16 +113,20 @@ public class Movement : MonoBehaviour {
 		}
 		if (Input.GetButtonDown(jump) && !isJumping)
 		{
-			rb.AddForce(transform.up * JumpForce, ForceMode.Impulse);
+			rb.AddForce(transform.up * JumpForce * TimeAffect, ForceMode.Impulse);
 			animator.SetBool("isJumping", true);
 		}
 
 		var cameraRotation = cameraTransform.rotation;
-		cameraTransform.Rotate(Input.GetAxis(RY) * transform.right * time * CameraSpeed, Space.World);
+		if (cs.Ready)
+		{
+			transform.Rotate(Input.GetAxis(RX) * transform.up * time * CameraSpeed, Space.World);
+			cameraTransform.Rotate(Input.GetAxis(RY) * transform.right * time * CameraSpeed, Space.World);
+		}
+
 		if (Mathf.Abs(Mathf.Sin(cameraTransform.eulerAngles.x * Mathf.Deg2Rad)) > CameraMaxVerticalAngleSin )
 			cameraTransform.rotation = cameraRotation;
 
-		transform.Rotate(Input.GetAxis(RX) * transform.up * time * CameraSpeed, Space.World);
 	}
       
 }
