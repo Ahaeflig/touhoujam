@@ -34,7 +34,6 @@ public class Movement : MonoBehaviour {
 		characterDirection = transform.forward;
 		TimeAffect = 1f;
 
-      
         if (InputController.instance.IsPS4Controller())
         {
             RY = "RYPS4";
@@ -42,6 +41,7 @@ public class Movement : MonoBehaviour {
             jump = "JumpPS4";
         }
 
+        Debug.Log(RY);
     }
 
     // Update is called once per frame

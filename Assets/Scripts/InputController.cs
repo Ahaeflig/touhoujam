@@ -24,11 +24,7 @@ public class InputController : MonoBehaviour
 
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-    }
 
-
-    private void Start()
-    {
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
@@ -47,6 +43,12 @@ public class InputController : MonoBehaviour
                 Xbox_One_Controller = 1;
             }
         }
+    }
+
+
+    private void Start()
+    {
+   
     }
 
     public bool IsPS4Controller()
