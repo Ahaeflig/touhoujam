@@ -30,8 +30,8 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 		ToLocation = trueToLocation;
 		ToRotation = trueToRotation;
 		ToScale = trueToScale;
-		ToLocation[0] = transform.position;
-		ToRotation[0] = transform.eulerAngles;
+		ToLocation[0] = transform.localPosition;
+		ToRotation[0] = transform.localEulerAngles;
 		ToScale[0] = transform.localScale;
 	}
 	
