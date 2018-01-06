@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 65147960204556832}
   - component: {fileID: 65976349145488634}
   - component: {fileID: 65563789485403948}
+  - component: {fileID: 65708802537412740}
+  - component: {fileID: 114032479788219112}
   m_Layer: 0
   m_Name: torii
   m_TagString: Untagged
@@ -116,8 +118,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438811042612786}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 194.42, y: 29.72, z: 97.45}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 96.9, y: 5.2, z: 3.51}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children:
   - {fileID: 4864236284467148}
@@ -126,7 +128,7 @@ Transform:
   - {fileID: 4281087582610026}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!4 &4645757732864142
 Transform:
   m_ObjectHideFlags: 1
@@ -357,6 +359,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.71, y: 1.04, z: 1.99}
   m_Center: {x: 0, y: 0, z: 2.14}
+--- !u!65 &65708802537412740
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438811042612786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.06, y: 1.75, z: 4.66}
+  m_Center: {x: 0, y: 0, z: -0.56}
 --- !u!65 &65976349145488634
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -369,3 +383,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.97, y: 1, z: 6.47}
   m_Center: {x: -2.01, y: 0.06, z: 0}
+--- !u!114 &114032479788219112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438811042612786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74694fe8a1522994d8011269d341b0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoadName: 02b Level1
