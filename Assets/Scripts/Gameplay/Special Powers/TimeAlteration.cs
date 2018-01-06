@@ -20,7 +20,7 @@ public class TimeAlteration : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire2") && currentCooldown >= Cooldown)
+		if (Input.GetButtonDown("Spell") && currentCooldown >= Cooldown)
 		{
 			currentCooldown = 0f;
 			currentSpan = currentCooldown;

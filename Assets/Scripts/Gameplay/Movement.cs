@@ -50,12 +50,11 @@ public class Movement : MonoBehaviour {
 		// For curious maids
 		float time = Time.deltaTime * TimeAffect;
 
-        //RaycastHit col;
-        //if (Physics.Raycast(ray.origin, ray.direction, out col))
-        //	Debug.DrawLine(ray.origin, col.point, Color.red);
-        //else
-        //	Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
-    
+		//RaycastHit col;
+		//if (Physics.Raycast(ray.origin, ray.direction, out col))
+		//	Debug.DrawLine(ray.origin, col.point, Color.red);
+		//else
+		//	Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
         if (isMoving || Mathf.Abs(Input.GetAxis(RX)) != 0)
 		{
 			float angle = Vector3.SignedAngle(playerModel.forward, characterDirection, transform.up);

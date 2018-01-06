@@ -18,7 +18,7 @@ public class BulletMaster : MonoBehaviour {
 	void Update () {
 		Ray ray = Cam.ScreenPointToRay(new Vector3(0.5f * Screen.width, 0.5f * Screen.height, 0));
 
-		if (Input.GetButtonDown("Fire3") && currentCooldown >= Cooldown)
+		if (Input.GetButtonDown("Fire") && currentCooldown >= Cooldown)
 		{
 			currentCooldown = 0f;
 			var o = Instantiate(seal, transform.position + transform.forward * 2, transform.rotation);

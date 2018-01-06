@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 21f1f7f6e7bbcc646b66976a5446f3cb
-timeCreated: 1515189245
+timeCreated: 1515199116
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,74 +9,74 @@ ModelImporter:
     100002: "_dummy_\u3057\u3063\u307D\u56DE\u8EE2_end"
     100004: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2"
     100006: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2_end"
-    100008: all
-    100010: body
-    100012: front
-    100014: suku
-    100016: //RootNode
-    100018: "\u3057\u3063\u307D"
-    100020: "\u3057\u3063\u307D\u5148"
-    100022: "\u3057\u3063\u307D\u5148_end"
-    100024: "\u3057\u3063\u307D\u56DE\u8EE2"
-    100026: "\u3057\u3063\u307D\u56DE\u8EE2_end"
-    100028: "\u30B5\u30A4\u30C9\u9AEA1.L"
-    100030: "\u30B5\u30A4\u30C9\u9AEA1.R"
-    100032: "\u30B5\u30A4\u30C9\u9AEA2.L"
-    100034: "\u30B5\u30A4\u30C9\u9AEA2.R"
-    100036: "\u30B5\u30A4\u30C9\u9AEA\u5143.L"
-    100038: "\u30B5\u30A4\u30C9\u9AEA\u5143.R"
-    100040: "\u30B5\u30A4\u30C9\u9AEA\u5148.L"
-    100042: "\u30B5\u30A4\u30C9\u9AEA\u5148.L_end"
-    100044: "\u30B5\u30A4\u30C9\u9AEA\u5148.R"
-    100046: "\u30B5\u30A4\u30C9\u9AEA\u5148.R_end"
-    100048: "\u30BF\u30A4"
-    100050: "\u30BF\u30A42"
-    100052: "\u30BF\u30A43"
-    100054: "\u30BF\u30A43\u5148"
-    100056: "\u30BF\u30A43\u5148_end"
-    100058: "\u30BF\u30A44"
-    100060: "\u30BF\u30A44\u5148"
-    100062: "\u30BF\u30A44\u5148_end"
-    100064: "\u30EA\u30DC\u30F3"
-    100066: "\u30EA\u30DC\u30F3_end"
-    100068: "\u4E0B\u534A\u8EAB"
+    100008: //RootNode
+    100010: "\u3057\u3063\u307D"
+    100012: "\u3057\u3063\u307D\u5148"
+    100014: "\u3057\u3063\u307D\u5148_end"
+    100016: "\u3057\u3063\u307D\u56DE\u8EE2"
+    100018: "\u3057\u3063\u307D\u56DE\u8EE2_end"
+    100020: "\u3059\u304F\u3059\u304F\u970A\u5922_arm"
+    100022: "\u30B5\u30A4\u30C9\u9AEA1.L"
+    100024: "\u30B5\u30A4\u30C9\u9AEA1.R"
+    100026: "\u30B5\u30A4\u30C9\u9AEA2.L"
+    100028: "\u30B5\u30A4\u30C9\u9AEA2.R"
+    100030: "\u30B5\u30A4\u30C9\u9AEA\u5143.L"
+    100032: "\u30B5\u30A4\u30C9\u9AEA\u5143.R"
+    100034: "\u30B5\u30A4\u30C9\u9AEA\u5148.L"
+    100036: "\u30B5\u30A4\u30C9\u9AEA\u5148.L_end"
+    100038: "\u30B5\u30A4\u30C9\u9AEA\u5148.R"
+    100040: "\u30B5\u30A4\u30C9\u9AEA\u5148.R_end"
+    100042: "\u30BB\u30F3\u30BF\u30FC"
+    100044: "\u30BF\u30A4"
+    100046: "\u30BF\u30A42"
+    100048: "\u30BF\u30A43"
+    100050: "\u30BF\u30A43\u5148"
+    100052: "\u30BF\u30A43\u5148_end"
+    100054: "\u30BF\u30A44"
+    100056: "\u30BF\u30A44\u5148"
+    100058: "\u30BF\u30A44\u5148_end"
+    100060: "\u30EA\u30DC\u30F3"
+    100062: "\u30EA\u30DC\u30F3_end"
+    100064: "\u4E0A\u534A\u8EAB"
+    100066: "\u4E0B\u534A\u8EAB"
+    100068: "\u5168\u3066\u306E\u89AA"
     100070: "\u6750\u8CEA1"
     100072: "\u6750\u8CEA1.001"
     400000: "_dummy_\u3057\u3063\u307D\u56DE\u8EE2"
     400002: "_dummy_\u3057\u3063\u307D\u56DE\u8EE2_end"
     400004: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2"
     400006: "_shadow_\u3057\u3063\u307D\u56DE\u8EE2_end"
-    400008: all
-    400010: body
-    400012: front
-    400014: suku
-    400016: //RootNode
-    400018: "\u3057\u3063\u307D"
-    400020: "\u3057\u3063\u307D\u5148"
-    400022: "\u3057\u3063\u307D\u5148_end"
-    400024: "\u3057\u3063\u307D\u56DE\u8EE2"
-    400026: "\u3057\u3063\u307D\u56DE\u8EE2_end"
-    400028: "\u30B5\u30A4\u30C9\u9AEA1.L"
-    400030: "\u30B5\u30A4\u30C9\u9AEA1.R"
-    400032: "\u30B5\u30A4\u30C9\u9AEA2.L"
-    400034: "\u30B5\u30A4\u30C9\u9AEA2.R"
-    400036: "\u30B5\u30A4\u30C9\u9AEA\u5143.L"
-    400038: "\u30B5\u30A4\u30C9\u9AEA\u5143.R"
-    400040: "\u30B5\u30A4\u30C9\u9AEA\u5148.L"
-    400042: "\u30B5\u30A4\u30C9\u9AEA\u5148.L_end"
-    400044: "\u30B5\u30A4\u30C9\u9AEA\u5148.R"
-    400046: "\u30B5\u30A4\u30C9\u9AEA\u5148.R_end"
-    400048: "\u30BF\u30A4"
-    400050: "\u30BF\u30A42"
-    400052: "\u30BF\u30A43"
-    400054: "\u30BF\u30A43\u5148"
-    400056: "\u30BF\u30A43\u5148_end"
-    400058: "\u30BF\u30A44"
-    400060: "\u30BF\u30A44\u5148"
-    400062: "\u30BF\u30A44\u5148_end"
-    400064: "\u30EA\u30DC\u30F3"
-    400066: "\u30EA\u30DC\u30F3_end"
-    400068: "\u4E0B\u534A\u8EAB"
+    400008: //RootNode
+    400010: "\u3057\u3063\u307D"
+    400012: "\u3057\u3063\u307D\u5148"
+    400014: "\u3057\u3063\u307D\u5148_end"
+    400016: "\u3057\u3063\u307D\u56DE\u8EE2"
+    400018: "\u3057\u3063\u307D\u56DE\u8EE2_end"
+    400020: "\u3059\u304F\u3059\u304F\u970A\u5922_arm"
+    400022: "\u30B5\u30A4\u30C9\u9AEA1.L"
+    400024: "\u30B5\u30A4\u30C9\u9AEA1.R"
+    400026: "\u30B5\u30A4\u30C9\u9AEA2.L"
+    400028: "\u30B5\u30A4\u30C9\u9AEA2.R"
+    400030: "\u30B5\u30A4\u30C9\u9AEA\u5143.L"
+    400032: "\u30B5\u30A4\u30C9\u9AEA\u5143.R"
+    400034: "\u30B5\u30A4\u30C9\u9AEA\u5148.L"
+    400036: "\u30B5\u30A4\u30C9\u9AEA\u5148.L_end"
+    400038: "\u30B5\u30A4\u30C9\u9AEA\u5148.R"
+    400040: "\u30B5\u30A4\u30C9\u9AEA\u5148.R_end"
+    400042: "\u30BB\u30F3\u30BF\u30FC"
+    400044: "\u30BF\u30A4"
+    400046: "\u30BF\u30A42"
+    400048: "\u30BF\u30A43"
+    400050: "\u30BF\u30A43\u5148"
+    400052: "\u30BF\u30A43\u5148_end"
+    400054: "\u30BF\u30A44"
+    400056: "\u30BF\u30A44\u5148"
+    400058: "\u30BF\u30A44\u5148_end"
+    400060: "\u30EA\u30DC\u30F3"
+    400062: "\u30EA\u30DC\u30F3_end"
+    400064: "\u4E0A\u534A\u8EAB"
+    400066: "\u4E0B\u534A\u8EAB"
+    400068: "\u5168\u3066\u306E\u89AA"
     400070: "\u6750\u8CEA1"
     400072: "\u6750\u8CEA1.001"
     2100000: "\u6750\u8CEA1"
@@ -86,17 +86,7 @@ ModelImporter:
     9500000: //RootNode
     13700000: "\u6750\u8CEA1"
     13700002: "\u6750\u8CEA1.001"
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u6750\u8CEA1"
-    second: {fileID: 2100000, guid: 844e07560dfeeea4b8e34a676e782748, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\u6750\u8CEA1.001"
-    second: {fileID: 2100000, guid: 844e07560dfeeea4b8e34a676e782748, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
