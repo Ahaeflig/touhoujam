@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_Name
       value: torii (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114032479788219112, guid: 9930d9c72aeef584581c961e52ecfb46,
+        type: 2}
+      propertyPath: levelToLoadName
+      value: 02b Level2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9930d9c72aeef584581c961e52ecfb46, type: 2}
   m_IsPrefabParent: 0
@@ -313,6 +318,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114032479788219112, guid: 9930d9c72aeef584581c961e52ecfb46,
+        type: 2}
+      propertyPath: levelToLoadName
+      value: Hyo_scene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9930d9c72aeef584581c961e52ecfb46, type: 2}
   m_IsPrefabParent: 0
@@ -359,6 +369,11 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114032479788219112, guid: 9930d9c72aeef584581c961e52ecfb46,
+        type: 2}
+      propertyPath: levelToLoadName
+      value: echo_pf_sandbox
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9930d9c72aeef584581c961e52ecfb46, type: 2}
   m_IsPrefabParent: 0
@@ -400,6 +415,10 @@ Prefab:
     - target: {fileID: 4034119866231554, guid: 3ee7bf22898125147ab411754b58674d, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928430489939842, guid: 3ee7bf22898125147ab411754b58674d, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ee7bf22898125147ab411754b58674d, type: 2}
@@ -447,10 +466,6 @@ Prefab:
       propertyPath: m_Name
       value: torii (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4337114674456278, guid: 9930d9c72aeef584581c961e52ecfb46, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9930d9c72aeef584581c961e52ecfb46, type: 2}
   m_IsPrefabParent: 0
@@ -490,8 +505,8 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 2b1e6bd68562ace44b958db462bd9036, type: 2}
-  m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeDistance: 2000
+  m_TreeBillboardDistance: 1052
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
