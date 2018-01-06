@@ -48,8 +48,8 @@ public class BlockTransformer : MonoBehaviour, IMechanism {
 			Transition = 0f;
 		}
 
-		transform.position = Vector3.Lerp(ToLocation[currentLocationState], ToLocation[locationState], Transition);
-		transform.eulerAngles = Vector3.Lerp(ToRotation[currentRotationState], ToRotation[rotationState], Transition);
+		transform.localPosition = Vector3.Lerp(ToLocation[currentLocationState], ToLocation[locationState], Transition);
+		transform.localEulerAngles = Vector3.Lerp(ToRotation[currentRotationState], ToRotation[rotationState], Transition);
 		//transform.rotation = Quaternion.Slerp(previousRotation, previousRotation * Quaternion.Euler(ToRotation[rotationState]), Transition);
 		transform.localScale = Vector3.Lerp(ToScale[currentScaleState], ToScale[scaleState], Transition);
 	}
