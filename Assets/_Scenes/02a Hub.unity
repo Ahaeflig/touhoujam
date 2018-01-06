@@ -719,6 +719,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114640152763104024, guid: 6ff9f64bf3c7fec428ff350644380b19,
+        type: 2}
+      propertyPath: stings.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: aa4eb0d33286b1e47980275a11319094, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ff9f64bf3c7fec428ff350644380b19, type: 2}
   m_IsPrefabParent: 0
