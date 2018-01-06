@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Switch
   - Wall
+  - Evil
   layers:
   - Default
   - TransparentFX

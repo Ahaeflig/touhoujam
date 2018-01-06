@@ -15,6 +15,7 @@ public class SealScript : MonoBehaviour {
 	public float DamagePerSec;
 	private GameObject target;
 	public float Timeout;
+	private bool hasToggle;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class SealScript : MonoBehaviour {
 		rb.AddForce(transform.forward * Speed);
 		dead = false;
 		alpha = 1;
+		hasToggle = false;
 	}
 
 
@@ -35,16 +37,22 @@ public class SealScript : MonoBehaviour {
 		normal = new Vector3(normal.x, 0, normal.z);
 		transform.rotation *= Quaternion.Euler(transform.right * 90);
 
-		var m = collision.collider.gameObject.GetComponent<IActivable>();
-		if (m != null)
-			m.Activate();
-
 		hasCollided = true;
 		hasEffect = collision.collider.gameObject.tag.Equals("Evil");
 		if (hasEffect)
 		{
 			target = collision.collider.gameObject;
 			Instantiate(EffectOnEffective, transform);
+		}
+
+		if (!hasEffect) //Switch alternative
+		{
+			hasEffect = collision.collider.gameObject.tag.Equals("Switch");
+			if (hasEffect)
+			{
+				target = collision.collider.gameObject;
+				Instantiate(EffectOnEffective, transform);
+			}
 		}
 
 	}
@@ -83,7 +91,14 @@ public class SealScript : MonoBehaviour {
 
 		if (hasEffect)
 		{
-			target.GetComponent<EvilScript>().Damage(gameObject, DamagePerSec * Time.deltaTime);
+			if (target.tag.Equals("Evil"))
+				target.GetComponent<EvilScript>().Damage(gameObject, DamagePerSec * Time.deltaTime);
+			if (!hasToggle && target.tag.Equals("Switch"))
+			{
+				hasToggle = true;
+				Lifetime = target.GetComponent<IActivable>().ActivateSpecial();
+			}
+			
 		}
 
 		Renderer rend = GetComponent<Renderer>();

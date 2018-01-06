@@ -10,6 +10,8 @@ public class SwitchController : MonoBehaviour, IActivable {
 	public Material MaterialOn;
 	public Material MaterialOff;
 	private MechanismInfo info;
+	public float Timeout;
+	private float currentTimeout;
 	// Use this for initialization
 	void Start () {
 		script = Target.GetComponent<IMechanism>();
@@ -29,6 +31,13 @@ public class SwitchController : MonoBehaviour, IActivable {
 		//	isEnabled = !isEnabled;
 		//	SetState(isEnabled);
 		//}
+		if (Timeout > 0f)
+		{
+			if (isEnabled && currentTimeout <= 0f)
+				Activate();
+
+			currentTimeout -= Time.deltaTime;
+		}
 	}
 
 	public void Activate()
@@ -41,5 +50,12 @@ public class SwitchController : MonoBehaviour, IActivable {
 			GetComponent<Renderer>().material = MaterialOn;
 		else
 			GetComponent<Renderer>().material = MaterialOff;
+	}
+
+	public float ActivateSpecial()
+	{
+		currentTimeout = Timeout;
+		Activate();
+		return Timeout;
 	}
 }

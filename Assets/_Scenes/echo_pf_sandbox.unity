@@ -2096,6 +2096,7 @@ MonoBehaviour:
   isEnabled: 0
   MaterialOn: {fileID: 2100000, guid: f15cd687f2916a645bacd2db59e3d737, type: 2}
   MaterialOff: {fileID: 2100000, guid: 2735805ede0a2594a878a22751146a97, type: 2}
+  Timeout: 3
 --- !u!23 &1283883731
 MeshRenderer:
   m_ObjectHideFlags: 0

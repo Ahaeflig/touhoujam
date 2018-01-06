@@ -53,4 +53,9 @@ public class AutomaticTimer : MonoBehaviour, IActivable {
 				GetComponent<Renderer>().material = MaterialOff;
 		}
 	}
+
+	public float ActivateSpecial()
+	{
+		return 0;
+	}
 }

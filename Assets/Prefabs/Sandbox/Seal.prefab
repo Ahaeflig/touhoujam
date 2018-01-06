@@ -128,3 +128,4 @@ MonoBehaviour:
   EffectOnEffective: {fileID: 1744863744465826, guid: 3b59426015d5b584480e7a3cb6c6cb43,
     type: 2}
   DamagePerSec: 1
+  Timeout: 15
