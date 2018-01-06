@@ -10,9 +10,11 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 	[Range(0.01f, 1f)]
 	public float TimeScale;
 	public bool Available;
+	public GameObject FXSphere;
 
 	private float currentCooldown;
 	private float currentSpan;
+	private GameObject currentSphere;
 	// Use this for initialization
 	void Start () {
 		currentCooldown = Cooldown;
@@ -48,6 +50,7 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 			transform.parent.GetComponent<Movement>().TimeAffect = 1 / TimeScale;
 			Time.fixedDeltaTime = 0.02F * Time.timeScale;
 			GetComponent<Animator>().speed = 1 / TimeScale;
+			currentSphere = Instantiate(FXSphere, transform);
 		}
 		else
 		{
@@ -55,6 +58,7 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 			transform.parent.GetComponent<Movement>().TimeAffect = 1f;
 			Time.fixedDeltaTime = 0.02F;
 			GetComponent<Animator>().speed = 1f;
+			currentSphere.GetComponent<InvertSphereScript>().Kill();
 		}
 	}
 

@@ -712,8 +712,9 @@ MonoBehaviour:
   AlteredTime: 0
   LimitedSpan: 0
   Cooldown: 0
-  TimeScale: 0.2
+  TimeScale: 0.05
   Available: 0
+  FXSphere: {fileID: 1126561046394858, guid: d35478997db0fed4f998c8247a4a03b9, type: 2}
 --- !u!1 &523946023
 GameObject:
   m_ObjectHideFlags: 0

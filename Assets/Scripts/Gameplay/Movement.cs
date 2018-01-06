@@ -84,7 +84,8 @@ public class Movement : MonoBehaviour {
 
 			animator.speed = 1 * TimeAffect;
 		}
-		if (Mathf.Abs(rb.velocity.y) - 0.05f < 0)
+		Debug.DrawRay(playerModel.position, rb.velocity, Color.cyan);
+		if (Mathf.Abs(rb.velocity.y) < 0.1f * TimeAffect)
 		{
 			isJumping = false;
 			animator.SetBool("isJumping", false);
@@ -96,7 +97,7 @@ public class Movement : MonoBehaviour {
 		
 		if (isJumping)
 			rb.velocity -= MoreGravity * time * transform.up * TimeAffect;
-		if (rb.velocity.y < -0.2f)
+		if (rb.velocity.y < -1f)
 		{
 			isFalling = true;
 			animator.SetBool("isFalling", true);
