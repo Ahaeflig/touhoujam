@@ -2187,7 +2187,7 @@ Prefab:
         type: 2}
       propertyPath: MaterialOff
       value: 
-      objectReference: {fileID: 2100000, guid: 2735805ede0a2594a878a22751146a97, type: 2}
+      objectReference: {fileID: 2100000, guid: 0ce3127ec73ceac4e86cff05da6258ea, type: 2}
     - target: {fileID: 114469026404540882, guid: 19fae572f7c54e74298a2dc9feadc8bd,
         type: 2}
       propertyPath: soundFx
