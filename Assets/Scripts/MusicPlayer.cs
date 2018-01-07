@@ -10,6 +10,8 @@ public class MusicPlayer : MonoBehaviour {
     public AudioClip[] stings;
     public AudioSource stingSource;
 
+    public AudioSource sfxSource;
+
     //Awake is always called before any Start functions
     void Awake()
     {
@@ -50,6 +52,12 @@ public class MusicPlayer : MonoBehaviour {
     public void changeIntensityVolume(float volume)
     {
         stingSource.volume = volume;
+    }
+
+    public void playSong(AudioClip clip)
+    {
+        sfxSource.clip = clip;
+        sfxSource.Play();
     }
 
 }

@@ -516,6 +516,11 @@ MonoBehaviour:
   ToRotation: []
   ToScale: []
   GluedToPC: 1
+--- !u!1 &286055328 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1928430489939842, guid: 3ee7bf22898125147ab411754b58674d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1466079606}
 --- !u!1 &365790834 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1293370584257576, guid: 490af933a099ab347a3959beabd9aca3,
@@ -1086,6 +1091,11 @@ Prefab:
       propertyPath: InitialCharacters.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114862655246431922, guid: 3ee7bf22898125147ab411754b58674d,
+        type: 2}
+      propertyPath: isPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ee7bf22898125147ab411754b58674d, type: 2}
   m_IsPrefabParent: 0
@@ -1609,6 +1619,16 @@ Prefab:
     - target: {fileID: 4872773092686412, guid: 490af933a099ab347a3959beabd9aca3, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140625951375726, guid: 490af933a099ab347a3959beabd9aca3,
+        type: 2}
+      propertyPath: pc
+      value: 
+      objectReference: {fileID: 286055328}
+    - target: {fileID: 114140625951375726, guid: 490af933a099ab347a3959beabd9aca3,
+        type: 2}
+      propertyPath: isPlayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 490af933a099ab347a3959beabd9aca3, type: 2}

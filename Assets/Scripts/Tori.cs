@@ -7,6 +7,7 @@ public class Tori : MonoBehaviour {
 
 
     public string levelToLoadName;
+    public AudioClip sfxWhenTeleporting;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,9 @@ public class Tori : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player") { 
+        if (other.tag == "Player") {
+
+            MusicPlayer.instance.playSong(sfxWhenTeleporting);
             SceneManager.LoadScene(levelToLoadName);
         }
     }
