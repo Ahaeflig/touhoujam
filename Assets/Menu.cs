@@ -41,6 +41,7 @@ public class Menu : MonoBehaviour {
 
     public void SetSoundVolume()
     {
+
         float volume = sound.GetComponentInChildren<Slider>().value;
         PlayerPrefs.SetFloat(volumeKey, volume);
         MusicPlayer.instance.changeIntensityVolume(volume);
