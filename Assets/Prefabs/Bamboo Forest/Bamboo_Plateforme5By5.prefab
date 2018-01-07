@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4370893388115250}
   - component: {fileID: 33299206549261148}
   - component: {fileID: 23649598235566384}
-  - component: {fileID: 64898837793777032}
+  - component: {fileID: 64174278608281246}
+  - component: {fileID: 114495201866549458}
   m_Layer: 0
   m_Name: rock
   m_TagString: Wall
@@ -38,6 +39,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4933614928320218}
   - component: {fileID: 23717516076832032}
+  - component: {fileID: 64221769795126554}
+  - component: {fileID: 65960412114989920}
   m_Layer: 0
   m_Name: Bamboo_Plateforme5By5
   m_TagString: Wall
@@ -147,7 +150,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484777200769902}
   m_Mesh: {fileID: 4300000, guid: d19be0980e0a6434b9122c49484babb6, type: 3}
---- !u!64 &64898837793777032
+--- !u!64 &64174278608281246
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -161,3 +164,40 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: d19be0980e0a6434b9122c49484babb6, type: 3}
+--- !u!64 &64221769795126554
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497825710168802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: d19be0980e0a6434b9122c49484babb6, type: 3}
+--- !u!65 &65960412114989920
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497825710168802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.29, y: 1, z: 1.32}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114495201866549458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484777200769902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf16695a6cdbc4945b049516008be48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
