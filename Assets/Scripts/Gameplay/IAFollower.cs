@@ -52,11 +52,11 @@ public class IAFollower : MonoBehaviour {
 			transform.position += movement;
 
 		RaycastHit rayFront;
-		var collisionFront = Physics.Raycast(pos, projXZdirection, out rayFront, frontRayRange);
+		var collisionFront = Physics.Raycast(pos, projXZdirection, out rayFront, frontRayRange, 1 << 2);
 		RaycastHit rayBelow;
-		var collisionGround = Physics.Raycast(pos, -Vector3.up, out rayBelow, belowRayRange);
+		var collisionGround = Physics.Raycast(pos, -Vector3.up, out rayBelow, belowRayRange, 1 << 2);
 		RaycastHit rayHazard;
-		var collisionHazard = Physics.Raycast(pos, projXZdirection + hazardRayAngle, out rayHazard, hazardRayRange);
+		var collisionHazard = Physics.Raycast(pos, projXZdirection + hazardRayAngle, out rayHazard, hazardRayRange, 1 << 2);
 		var cSpeed = Vector3.Magnitude(movement) / Time.deltaTime;
 		if (Following)
 			transform.LookAt(pcPos + new Vector3(0, -pcPos.y + transform.position.y, 0), Vector3.up);

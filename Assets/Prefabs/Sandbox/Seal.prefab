@@ -123,9 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7e91fda79abe240bbf593d2a2fb1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 500
+  Speed: 15
   Lifetime: 10
   EffectOnEffective: {fileID: 1744863744465826, guid: 3b59426015d5b584480e7a3cb6c6cb43,
     type: 2}
   DamagePerSec: 1
   Timeout: 15
+  pc: {fileID: 0}

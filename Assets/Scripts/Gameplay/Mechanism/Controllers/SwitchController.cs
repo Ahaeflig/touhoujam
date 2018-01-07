@@ -46,6 +46,7 @@ public class SwitchController : MonoBehaviour, IActivable {
 
 	public void Activate()
 	{
+		currentTimeout = Timeout;
 		if (!script.Activate(info))
 			return;
 
@@ -62,7 +63,6 @@ public class SwitchController : MonoBehaviour, IActivable {
 
 	public float ActivateSpecial()
 	{
-		currentTimeout = Timeout;
 		Activate();
 		return Timeout;
 	}

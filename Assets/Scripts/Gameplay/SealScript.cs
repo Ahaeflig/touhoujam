@@ -23,7 +23,7 @@ public class SealScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
-		rb.AddForce(transform.forward * Speed);
+		rb.AddForce(transform.forward * Speed, ForceMode.Impulse);
 		dead = false;
 		alpha = 1;
 		hasToggle = false;
