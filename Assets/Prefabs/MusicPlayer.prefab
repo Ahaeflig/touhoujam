@@ -279,6 +279,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8d6c42fe473dac5488d5f4ba237fbfd7, type: 3}
   - {fileID: 8300000, guid: 059ffd9713d74ee409ed84a9abbed751, type: 3}
   - {fileID: 8300000, guid: df323efd7a6e32f43857182f5fff0ec7, type: 3}
-  - {fileID: 8300000, guid: c352e1a6074246845b46801176c1ce3a, type: 3}
+  - {fileID: 0}
   stingSource: {fileID: 82164128019022752}
   sfxSource: {fileID: 82725148536671836}
+  jumpSfx: {fileID: 8300000, guid: eff358ce3834338428c505a6d2f3cc2d, type: 3}
