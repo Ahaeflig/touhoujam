@@ -16,6 +16,8 @@ public class SealScript : MonoBehaviour {
 	private GameObject target;
 	public float Timeout;
 	private bool hasToggle;
+	private Vector3? otherPosition;
+	private GameObject other;
 
 	// Use this for initialization
 	void Start () {
@@ -24,11 +26,13 @@ public class SealScript : MonoBehaviour {
 		dead = false;
 		alpha = 1;
 		hasToggle = false;
+		otherPosition = null;
 	}
 
 
 	void OnCollisionEnter(Collision collision)
 	{
+		other = collision.collider.gameObject;
 		rb.velocity = Vector3.zero;
 		rb.isKinematic = false;
 		rb.angularVelocity = Vector3.zero;
@@ -36,21 +40,21 @@ public class SealScript : MonoBehaviour {
 		var normal = collision.contacts[0].point - transform.position;
 		normal = new Vector3(normal.x, 0, normal.z);
 		transform.rotation *= Quaternion.Euler(transform.right * 90);
-
+		otherPosition = other.transform.position;
 		hasCollided = true;
-		hasEffect = collision.collider.gameObject.tag.Equals("Evil");
+		hasEffect = other.tag.Equals("Evil");
 		if (hasEffect)
 		{
-			target = collision.collider.gameObject;
+			target = other;
 			Instantiate(EffectOnEffective, transform);
 		}
 
 		if (!hasEffect) //Switch alternative
 		{
-			hasEffect = collision.collider.gameObject.tag.Equals("Switch");
+			hasEffect = other.tag.Equals("Switch");
 			if (hasEffect)
 			{
-				target = collision.collider.gameObject;
+				target = other;
 				Instantiate(EffectOnEffective, transform);
 			}
 		}
@@ -73,8 +77,23 @@ public class SealScript : MonoBehaviour {
 		if (Lifetime <= 0f && !dead)
 			Kill();
 
+		if (hasCollided)
+		{
+			if (other != null)
+			{
+				var op = (Vector3)otherPosition;
+				transform.position += other.transform.position - op;
+				otherPosition = other.transform.position;
+			}
+			else
+			{
+				rb.useGravity = true;
+			}
+		}
 		if (hasCollided && alpha <= 0)
 		{
+			
+
 			if (hasEffect)
 				foreach (var c in GetComponentsInChildren<ParticleSystem>())
 					c.Stop();
