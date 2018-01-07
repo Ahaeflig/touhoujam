@@ -38,6 +38,7 @@ public class Movement : MonoBehaviour {
 	public float gravityAcc;
 	public Vector3 JumpImpulse { get; set; }
 	public float AdditionalCameraMaxVerticalAngleSin;
+	public float WalkingToRunningZone;
 
 	public float AlteredTimeJumpMagicFactor;
 
@@ -107,7 +108,11 @@ public class Movement : MonoBehaviour {
 			float angle = Vector3.SignedAngle(playerModel.forward, characterDirection, Vector3.up);
 			angle = Mathf.Min(Mathf.Abs(angle), MaxRotationSpeed) * (angle >= 0 ? 1 : -1);
 			playerModel.Rotate(0, angle, 0);
-			transform.Translate((transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal")) * Speed * time, Space.World);
+			var dir = (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"));
+			if (dir.magnitude > 1f)
+				dir = Vector3.Normalize(dir);
+
+			transform.Translate(dir * Speed * time, Space.World);
 
 		}
 		if (cs.Ready && (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0))
@@ -116,10 +121,13 @@ public class Movement : MonoBehaviour {
 			characterDirection = Vector3.Normalize(transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"));
 			animator.speed = Mathf.Min(1, Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))) * TimeAffect;
 			animator.SetBool("isWalking", true);
-			if (Mathf.Abs(Input.GetAxis("Vertical")) >= 0.6f || Mathf.Abs(Input.GetAxis("Horizontal")) >= 0.6f)
+			if (Mathf.Abs(Input.GetAxis("Vertical")) >= WalkingToRunningZone || Mathf.Abs(Input.GetAxis("Horizontal")) >= WalkingToRunningZone)
 				animator.SetBool("isRunning", true);
 			else
 				animator.SetBool("isRunning", false);
+
+			if (!animator.GetBool("isRunning"))
+				animator.speed /= WalkingToRunningZone;
 
 
 		}

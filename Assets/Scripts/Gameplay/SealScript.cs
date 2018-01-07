@@ -56,9 +56,9 @@ public class SealScript : MonoBehaviour {
 			if (hasEffect)
 			{
 				target = other;
-				var o = Instantiate(EffectOnEffective, transform.position, transform.rotation);
-				o.transform.LookAt(pc.transform.position);
-				o.transform.Rotate(new Vector3(0, 90, 90), Space.World);
+				//var o = Instantiate(EffectOnEffective, transform.position, transform.rotation);
+				//o.transform.LookAt(pc.transform.position);
+				//o.transform.Rotate(new Vector3(0, 90, 90), Space.World);
 			}
 		}
 

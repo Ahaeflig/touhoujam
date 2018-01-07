@@ -99,14 +99,14 @@ public class IAFollower : MonoBehaviour {
 				animator.SetBool("isRunning", false);
 				animator.SetBool("isWalking", true);
 			}
-			if (cSpeed > Speed / 2)
-			{
-				animator.SetBool("isRunning", true);
-			}
 			else
 			{
 				animator.SetBool("isRunning", false);
 				animator.SetBool("isWalking", false);
+			}
+			if (cSpeed > Speed / 2)
+			{
+				animator.SetBool("isRunning", true);
 			}
 		}
 
