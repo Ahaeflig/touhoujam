@@ -15,6 +15,8 @@ public class CharacterSwitcher : MonoBehaviour {
 	private Vector3 fromPosition;
 	private Quaternion fromRotation;
 	public Vector3 PositionOffset;
+
+	public float CallRange;
 	
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		//currentCharacter.transform.position = transform.position;
 		//currentCharacter.transform.parent = transform;
 		currentCharacter.GetComponent<Rigidbody>().useGravity = false;
-		currentCharacter.GetComponent<BoxCollider>().enabled = false;
+		currentCharacter.GetComponent<SphereCollider>().enabled = false;
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = true;
 		transition = 1f;
 		Ready = true;
@@ -44,6 +46,44 @@ public class CharacterSwitcher : MonoBehaviour {
 		{
 			CompleteChange(Ready);
 		}
+
+		if (Input.GetButtonDown("CallCharacters"))
+		{
+			foreach (var c in characters)
+			{
+				if (c != currentCharacter)
+				{
+					if (Vector3.Distance(gameObject.transform.position, c.transform.position) <= CallRange)
+					{
+						var ia = c.GetComponent<IAFollower>();
+						if (!ia.Following)
+						{
+							ia.Call(true);
+							ia.Following = true;
+						}
+					}
+				}
+			}
+		}
+
+		if (Input.GetButtonDown("DismissCharacters"))
+		{
+			foreach (var c in characters)
+			{
+				if (c != currentCharacter)
+				{
+					if (Vector3.Distance(gameObject.transform.position, c.transform.position) <= CallRange)
+					{
+						var ia = c.GetComponent<IAFollower>();
+						if (ia.Following)
+						{
+							ia.Call(false);
+							ia.Following = false;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	void CompleteChange(bool ready)
@@ -55,7 +95,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentCharacter.transform.parent = transform;
 		currentCharacter.transform.localPosition = PositionOffset;
 		currentCharacter.GetComponent<Rigidbody>().useGravity = false;
-		currentCharacter.GetComponent<BoxCollider>().enabled = false;
+		currentCharacter.GetComponent<SphereCollider>().enabled = false;
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = true;
 		GetComponent<Rigidbody>().useGravity = true;
 		GetComponent<Rigidbody>().isKinematic = false;
@@ -71,10 +111,15 @@ public class CharacterSwitcher : MonoBehaviour {
 		if (c != null)
 			c.HandleSwitch(true);
 
+
+		foreach (var p in characters)
+		{
+			p.GetComponent<IAFollower>().Following = false;
+		}
 		currentCharacter.transform.parent = null;
 		index = index % characters.Count;
 		currentCharacter.GetComponent<Rigidbody>().useGravity = true;
-		currentCharacter.GetComponent<BoxCollider>().enabled = true;
+		currentCharacter.GetComponent<SphereCollider>().enabled = true;
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = false;
 		currentCharacter = characters[index];
 		currentIndex = index;
