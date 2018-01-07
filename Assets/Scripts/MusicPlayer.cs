@@ -54,8 +54,12 @@ public class MusicPlayer : MonoBehaviour {
     }
 
     public void changeIntensityVolume(float volume)
-    {
+    {   
         stingSource.volume = volume;
+        if (sfxSource.isPlaying) { 
+            sfxSource.volume = volume;
+            Debug.Log("asd");
+        }
     }
 
     public void playSong(AudioClip clip)
