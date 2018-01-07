@@ -47,6 +47,10 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentCharacter.GetComponent<SphereCollider>().enabled = true;
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = false;
 		currentCharacter.GetComponent<IAFollower>().isPlayer = false;
+		var s = currentCharacter.GetComponent<ISpell>();
+		if (s != null)
+			s.HandleSwitch(true);
+
 		currentCharacter.transform.parent = null;
 		GetComponent<Movement>().SetFreeCam(true);
 		return currentCharacter;

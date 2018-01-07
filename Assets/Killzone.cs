@@ -25,7 +25,7 @@ public class Killzone : MonoBehaviour {
         if (other.tag == "Player")
         {
 			//TODO desactivate player controls
-			gameOverUI.SetActive(true);
+			//gameOverUI.SetActive(true);
 			//MusicPlayer.instance.playSong(deathSound);
 			//source.PlayOneShot(deathSound);
 			//other.transform.position = CheckpointManagerScript.GetLastCheckpoint();

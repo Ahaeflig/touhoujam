@@ -55,7 +55,7 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 
 	}
 
-	void SlowTime(bool active)
+	public void SlowTime(bool active)
 	{
 		if (active)
 		{
@@ -88,8 +88,11 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 
 			Time.fixedDeltaTime = 0.02F;
 			GetComponent<Animator>().speed = 1f;
-			var rb = transform.parent.GetComponent<Rigidbody>();
-			rb.velocity = new Vector3(rb.velocity.x, Mathf.Min(rb.velocity.y, 0), rb.velocity.z);
+			if (transform.parent != null)
+			{
+				var rb = transform.parent.GetComponent<Rigidbody>();
+				rb.velocity = new Vector3(rb.velocity.x, Mathf.Min(rb.velocity.y, 0), rb.velocity.z);
+			}
 
 			//transform.parent.GetComponent<Rigidbody>().AddForce(-Physics.gravity * (1 / TimeScale - 1), ForceMode.Acceleration);
 			if (currentSphere != null)
