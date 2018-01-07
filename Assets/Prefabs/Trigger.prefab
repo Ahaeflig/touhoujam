@@ -231,4 +231,5 @@ MonoBehaviour:
   MaterialOn: {fileID: 2100000, guid: f15cd687f2916a645bacd2db59e3d737, type: 2}
   MaterialOff: {fileID: 2100000, guid: 0ce3127ec73ceac4e86cff05da6258ea, type: 2}
   soundFx: {fileID: 8300000, guid: 0bdf5c542b6fe8449b65753dae410bff, type: 3}
+  soundFx2: {fileID: 8300000, guid: 76098af9280ed334ebb24fedec612c4f, type: 3}
   Timeout: 0

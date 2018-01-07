@@ -33,7 +33,7 @@ public class TimeAlteration : MonoBehaviour, ISpell {
         }
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (!Available)
@@ -67,18 +67,19 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 			var rb = transform.parent.GetComponent<Rigidbody>();
 			rb.velocity = new Vector3(rb.velocity.x, Mathf.Min(rb.velocity.y, 0), rb.velocity.z);
 			MusicPlayer.instance.playSong(zwIn);
-			//var v = transform.parent.GetComponent<Movement>().trueVelocity;
-			//transform.parent.GetComponent<Movement>().trueVelocity = new Vector3(v.x, Mathf.Max(v.y, 0), v.z);
-			//transform.parent.GetComponent<Movement>().JumpImpulse = Vector3.zero;
-			//rb.AddForce(Physics.gravity * (1/TimeScale - 1), ForceMode.Acceleration);
+            MusicPlayer.instance.changeIntensityVolume(PlayerPrefs.GetFloat("intensityVolume")/4f);
+            //var v = transform.parent.GetComponent<Movement>().trueVelocity;
+            //transform.parent.GetComponent<Movement>().trueVelocity = new Vector3(v.x, Mathf.Max(v.y, 0), v.z);
+            //transform.parent.GetComponent<Movement>().JumpImpulse = Vector3.zero;
+            //rb.AddForce(Physics.gravity * (1/TimeScale - 1), ForceMode.Acceleration);
 
-		}
+        }
 		else
 		{
-			if (Time.timeScale != 1f)
-				MusicPlayer.instance.playSong(zwOut);
+            MusicPlayer.instance.changeIntensityVolume(PlayerPrefs.GetFloat("intensityVolume"));
+            MusicPlayer.instance.playSong(zwOut);
 
-			Time.timeScale = 1f;
+            Time.timeScale = 1f;
 			if (transform.parent != null)
 				transform.parent.GetComponent<Movement>().TimeAffect = 1f;
 
