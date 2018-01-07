@@ -19,10 +19,11 @@ public class InvertSphereScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.rotation = Quaternion.LookRotation(cam.transform.position - transform.position);
+		//transform.rotation = Quaternion.LookRotation(cam.transform.position - transform.position);
+		transform.LookAt(cam.transform, cam.transform.up);
 		if (Transition < 1f)
 		{
-			Transition = Mathf.Min(Transition + Time.deltaTime * GrowSpeed, 1f);
+			Transition = Mathf.Min(Transition + Time.deltaTime * GrowSpeed / Time.timeScale, 1f);
 			transform.localScale = Vector3.Lerp(fromScale, Goal, Transition);
 		}
 		transform.position = cam.transform.position + cam.transform.forward;
