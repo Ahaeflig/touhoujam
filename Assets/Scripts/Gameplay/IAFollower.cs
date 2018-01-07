@@ -119,7 +119,7 @@ public class IAFollower : MonoBehaviour {
 			{
 				if (!isJumping && !isFalling && jumpIF <= 0f)
 				{
-					print("jump");
+					MusicPlayer.instance.playJump();
 					rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
 					isJumping = true;
 					jumpIF = JumpNoCheck / Time.timeScale;

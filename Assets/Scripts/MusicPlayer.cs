@@ -11,6 +11,7 @@ public class MusicPlayer : MonoBehaviour {
     public AudioClip[] stings;
     public AudioSource stingSource;
     public AudioSource sfxSource;
+	public AudioClip jumpSfx;
 
     private string volumeKey = "intensityVolume";
 
@@ -69,5 +70,10 @@ public class MusicPlayer : MonoBehaviour {
         sfxSource.clip = clip;
         sfxSource.Play();
     }
+
+	public void playJump()
+	{
+		playSong(jumpSfx);
+	}
 
 }

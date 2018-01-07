@@ -182,6 +182,7 @@ public class Movement : MonoBehaviour {
 
 		if (Input.GetButtonDown(jump) && !isJumping && !isFalling)
 		{
+			MusicPlayer.instance.playJump();
 			if (TimeAffect != 1f)
 				JumpImpulse = transform.up * JumpForce * TimeAffect / AlteredTimeJumpMagicFactor;
 			else
