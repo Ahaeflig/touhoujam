@@ -18,6 +18,10 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 
     private string spellInput = "Spell";
 
+	public AudioClip zwIn;
+	public AudioClip zwOut;
+
+
 	// Use this for initialization
 	void Start () {
 		currentCooldown = Cooldown;
@@ -62,6 +66,7 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 			currentSphere = Instantiate(FXSphere, transform);
 			var rb = transform.parent.GetComponent<Rigidbody>();
 			rb.velocity = new Vector3(rb.velocity.x, Mathf.Min(rb.velocity.y, 0), rb.velocity.z);
+			MusicPlayer.instance.playSong(zwIn);
 			//var v = transform.parent.GetComponent<Movement>().trueVelocity;
 			//transform.parent.GetComponent<Movement>().trueVelocity = new Vector3(v.x, Mathf.Max(v.y, 0), v.z);
 			//transform.parent.GetComponent<Movement>().JumpImpulse = Vector3.zero;
@@ -70,6 +75,8 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 		}
 		else
 		{
+			MusicPlayer.instance.playSong(zwOut);
+
 			Time.timeScale = 1f;
 			if (transform.parent != null)
 				transform.parent.GetComponent<Movement>().TimeAffect = 1f;
