@@ -9,6 +9,9 @@ public class SwitchController : MonoBehaviour, IActivable {
 	private IMechanism script;
 	public Material MaterialOn;
 	public Material MaterialOff;
+
+    public AudioClip soundFx;
+
 	private MechanismInfo info;
 	public float Timeout;
 	private float currentTimeout;
@@ -46,9 +49,11 @@ public class SwitchController : MonoBehaviour, IActivable {
 			return;
 
 		isEnabled = !isEnabled;
-		if (isEnabled)
+		if (isEnabled) { 
 			GetComponent<Renderer>().material = MaterialOn;
-		else
+            MusicPlayer.instance.playSong(soundFx);
+        }
+        else
 			GetComponent<Renderer>().material = MaterialOff;
 	}
 

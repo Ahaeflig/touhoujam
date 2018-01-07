@@ -247,6 +247,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7945b653828c8264e9811fd08fa8adf3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &374690357
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 55.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 37.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552835441806826, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &421387436
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +896,7 @@ GameObject:
   - component: {fileID: 1401326285}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

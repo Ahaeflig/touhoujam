@@ -9,8 +9,9 @@ public class MusicPlayer : MonoBehaviour {
 
     public AudioClip[] stings;
     public AudioSource stingSource;
-
     public AudioSource sfxSource;
+
+    private string volumeKey = "intensityVolume";
 
     //Awake is always called before any Start functions
     void Awake()
@@ -34,6 +35,9 @@ public class MusicPlayer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        stingSource.volume = PlayerPrefs.GetFloat(volumeKey, 0.5f);
+
         stingSource.clip = stings[0];
         stingSource.Play();
     }
