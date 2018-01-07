@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
   m_Fog: 1
-  m_FogColor: {r: 0.75, g: 0.73600405, b: 0.6231618, a: 1}
+  m_FogColor: {r: 0.33333334, g: 0.627451, b: 0.89019614, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.28125, g: 0.52783364, b: 0.75, a: 1}
+  m_AmbientSkyColor: {r: 0.3336397, g: 0.6261556, b: 0.8897059, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -1124,6 +1124,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1293370584257576, guid: 490af933a099ab347a3959beabd9aca3,
     type: 2}
   m_PrefabInternal: {fileID: 1969999176}
+--- !u!1 &464759824 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1298436948541918, guid: f21a7ffc55d493741a23e600c0799eb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 859092877}
+--- !u!65 &464759825
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 464759824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7, y: 2.81, z: 20}
+  m_Center: {x: -28.28, y: 0, z: -20.81}
 --- !u!1001 &474699249
 Prefab:
   m_ObjectHideFlags: 0
@@ -1675,11 +1692,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4563112368769840, guid: f21a7ffc55d493741a23e600c0799eb5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 88.4
+      value: 93.3
       objectReference: {fileID: 0}
     - target: {fileID: 4563112368769840, guid: f21a7ffc55d493741a23e600c0799eb5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 17.76
+      value: 17.19
       objectReference: {fileID: 0}
     - target: {fileID: 4563112368769840, guid: f21a7ffc55d493741a23e600c0799eb5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1752,12 +1769,12 @@ Prefab:
     - target: {fileID: 198381763200278846, guid: f21a7ffc55d493741a23e600c0799eb5,
         type: 2}
       propertyPath: ShapeModule.m_Scale.x
-      value: 11.26
+      value: 14.94244
       objectReference: {fileID: 0}
     - target: {fileID: 198381763200278846, guid: f21a7ffc55d493741a23e600c0799eb5,
         type: 2}
       propertyPath: randomSeed
-      value: -552564373
+      value: -844985840
       objectReference: {fileID: 0}
     - target: {fileID: 4235561706467506, guid: f21a7ffc55d493741a23e600c0799eb5, type: 2}
       propertyPath: m_LocalPosition.x

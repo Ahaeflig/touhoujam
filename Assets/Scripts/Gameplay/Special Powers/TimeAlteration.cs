@@ -63,7 +63,7 @@ public class TimeAlteration : MonoBehaviour, ISpell {
 			transform.parent.GetComponent<Movement>().TimeAffect = 1 / TimeScale;
 			Time.fixedDeltaTime = 0.02F * Time.timeScale;
 			GetComponent<Animator>().speed = 1 / TimeScale;
-			currentSphere = Instantiate(FXSphere, transform);
+			currentSphere = Instantiate(FXSphere);
 			var rb = transform.parent.GetComponent<Rigidbody>();
 			rb.velocity = new Vector3(rb.velocity.x, Mathf.Min(rb.velocity.y, 0), rb.velocity.z);
 			MusicPlayer.instance.playSong(zwIn);
