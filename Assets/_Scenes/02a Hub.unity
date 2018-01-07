@@ -431,17 +431,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114223511569801072, guid: e718d4e8601996f498a668f4eaa39d8c,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Welcome to the Hub!
-
-        You can'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1070176095928974, guid: e718d4e8601996f498a668f4eaa39d8c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e718d4e8601996f498a668f4eaa39d8c, type: 2}
   m_IsPrefabParent: 0
