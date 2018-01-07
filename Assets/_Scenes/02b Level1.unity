@@ -220,7 +220,7 @@ Prefab:
         type: 2}
       propertyPath: soundFx2
       value: 
-      objectReference: {fileID: 8300000, guid: 76098af9280ed334ebb24fedec612c4f, type: 3}
+      objectReference: {fileID: 8300000, guid: fc913c05d38ecaf48a160276ec593d4e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
   m_IsPrefabParent: 0
@@ -1491,7 +1491,7 @@ Prefab:
         type: 2}
       propertyPath: soundFx2
       value: 
-      objectReference: {fileID: 8300000, guid: 76098af9280ed334ebb24fedec612c4f, type: 3}
+      objectReference: {fileID: 8300000, guid: fc913c05d38ecaf48a160276ec593d4e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19fae572f7c54e74298a2dc9feadc8bd, type: 2}
   m_IsPrefabParent: 0
