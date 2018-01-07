@@ -66,41 +66,33 @@ public class CharacterSwitcher : MonoBehaviour {
 
 		if (Input.GetButtonDown("CallCharacters"))
 		{
-			foreach (var c in characters)
+			var l = new List<GameObject>();
+			foreach (var c in GameObject.FindGameObjectsWithTag("Suku"))
 			{
-				if (c != currentCharacter)
+				if (!c.GetComponent<IAFollower>().isPlayer && Vector3.Distance(gameObject.transform.position, c.transform.position) <= CallRange)
 				{
-					if (Vector3.Distance(gameObject.transform.position, c.transform.position) <= CallRange)
-					{
-						var ia = c.GetComponent<IAFollower>();
-						if (!ia.Following)
-						{
-							ia.Call(true);
-							ia.Following = true;
-						}
-					}
+					l.Add(c);
 				}
+
 			}
+				var b = true;
+				var l2 = new List<GameObject>();
+				foreach (var suku in l)
+				{
+					var b2 = suku.GetComponent<IAFollower>().Following;
+					b = b && b2;
+					if (!b2)
+						l2.Add(suku);
+				}
+
+				if (b)
+					foreach (var suku in l)
+						suku.GetComponent<IAFollower>().Call(false);
+				else
+					foreach (var suku in l2)
+						suku.GetComponent<IAFollower>().Call(true);
 		}
 
-		if (Input.GetButtonDown("DismissCharacters"))
-		{
-			foreach (var c in characters)
-			{
-				if (c != currentCharacter)
-				{
-					if (Vector3.Distance(gameObject.transform.position, c.transform.position) <= CallRange)
-					{
-						var ia = c.GetComponent<IAFollower>();
-						if (ia.Following)
-						{
-							ia.Call(false);
-							ia.Following = false;
-						}
-					}
-				}
-			}
-		}
 	}
 
 	void CompleteChange(bool ready)

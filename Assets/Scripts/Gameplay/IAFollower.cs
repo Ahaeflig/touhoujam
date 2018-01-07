@@ -16,6 +16,7 @@ public class IAFollower : MonoBehaviour {
 	public Vector3 raycastOffset;
 	public GameObject body;
 	private Quaternion initialRotation;
+	public Vector3 decalTarget;
 
 	public GameObject EffectLove;
 	public GameObject EffectDislike;
@@ -41,7 +42,7 @@ public class IAFollower : MonoBehaviour {
 	void Update () {
 		var pos = transform.position + raycastOffset;
 		var rot = transform.rotation;
-		var pcPos = pc.transform.position;
+		var pcPos = pc.transform.position + decalTarget;
 		jumpIF = Mathf.Max(jumpIF - Time.deltaTime / Time.timeScale, 0f);
 
 		var projXZdistance = new Vector3(pcPos.x - pos.x, 0, pcPos.z - pos.z);
@@ -132,5 +133,12 @@ public class IAFollower : MonoBehaviour {
 			Instantiate(EffectLove, gameObject.transform);
 		else
 			Instantiate(EffectDislike, gameObject.transform);
+
+		Following = like;
+		if (!Following)
+		{
+			animator.SetBool("isWalking", false);
+			animator.SetBool("isRunning", false);
+		}
 	}
 }
