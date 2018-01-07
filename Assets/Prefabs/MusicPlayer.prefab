@@ -275,5 +275,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: afcc092bd97266f41b67a0d1ff7e4f25, type: 3}
   - {fileID: 8300000, guid: aa4eb0d33286b1e47980275a11319094, type: 3}
   - {fileID: 8300000, guid: 9a9b7b1619770954789b6612d785d040, type: 3}
+  - {fileID: 8300000, guid: df323efd7a6e32f43857182f5fff0ec7, type: 3}
   stingSource: {fileID: 82164128019022752}
   sfxSource: {fileID: 82725148536671836}
