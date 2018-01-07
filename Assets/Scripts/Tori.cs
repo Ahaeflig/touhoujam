@@ -22,7 +22,6 @@ public class Tori : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") {
-
             MusicPlayer.instance.playSong(sfxWhenTeleporting);
             SceneManager.LoadScene(levelToLoadName);
         }
