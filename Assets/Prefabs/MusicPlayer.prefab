@@ -79,7 +79,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1350074929640028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 84.34758, y: -3.165268, z: 137.82504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4363648643632952}
@@ -273,8 +273,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stings:
   - {fileID: 8300000, guid: afcc092bd97266f41b67a0d1ff7e4f25, type: 3}
+  - {fileID: 8300000, guid: afcc092bd97266f41b67a0d1ff7e4f25, type: 3}
   - {fileID: 8300000, guid: aa4eb0d33286b1e47980275a11319094, type: 3}
-  - {fileID: 8300000, guid: 9a9b7b1619770954789b6612d785d040, type: 3}
-  - {fileID: 8300000, guid: df323efd7a6e32f43857182f5fff0ec7, type: 3}
+  - {fileID: 8300000, guid: aa4eb0d33286b1e47980275a11319094, type: 3}
+  - {fileID: 8300000, guid: 8d6c42fe473dac5488d5f4ba237fbfd7, type: 3}
+  - {fileID: 8300000, guid: 8d6c42fe473dac5488d5f4ba237fbfd7, type: 3}
+  - {fileID: 8300000, guid: 8d6c42fe473dac5488d5f4ba237fbfd7, type: 3}
   stingSource: {fileID: 82164128019022752}
   sfxSource: {fileID: 82725148536671836}
