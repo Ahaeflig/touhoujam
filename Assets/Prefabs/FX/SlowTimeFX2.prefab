@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699b2ebd0146b104686c841ca5406cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrowSpeed: 8
-  Goal: {x: 1000, y: 1000, z: 1}
+  GrowSpeed: 1.5
+  Goal: {x: 250, y: 250, z: 1}
   Transition: 0
   SetToKill: 0
