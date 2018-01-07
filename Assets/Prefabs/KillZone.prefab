@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1298436948541918}
-  deathSound: {fileID: 8300000, guid: 17394015ccb2ea446b5504f392036e6e, type: 3}
+  deathSound: {fileID: 8300000, guid: a8c2c1db4c03d0e4ea43d8c26525a4ae, type: 3}
   RespawnTime: 3
 --- !u!198 &198381763200278846
 ParticleSystem:
