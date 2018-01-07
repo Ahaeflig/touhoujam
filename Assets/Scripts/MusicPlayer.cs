@@ -47,4 +47,9 @@ public class MusicPlayer : MonoBehaviour {
         stingSource.Play();
     }
 
+    public void changeIntensityVolume(float volume)
+    {
+        stingSource.volume = volume;
+    }
+
 }
