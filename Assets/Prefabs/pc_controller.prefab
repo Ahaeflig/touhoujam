@@ -422,8 +422,9 @@ GameObject:
   - component: {fileID: 4055887927111506}
   - component: {fileID: 95708188159742072}
   - component: {fileID: 54499369336281694}
-  - component: {fileID: 65216025186145296}
   - component: {fileID: 114045857015469744}
+  - component: {fileID: 135846105604658768}
+  - component: {fileID: 114862655246431922}
   m_Layer: 0
   m_Name: suku_Reimu_orig
   m_TagString: Untagged
@@ -668,7 +669,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928430489939842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.89, y: 1.05, z: 32.28}
+  m_LocalPosition: {x: 151.3, y: 12.9, z: 96.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4167688557729528}
@@ -783,7 +784,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1211656901038662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.22, y: 7.96, z: 6.98}
+  m_LocalPosition: {x: 0.2, y: 7.96, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4167688557729528}
@@ -1258,18 +1259,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &65216025186145296
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1736001014162898}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!65 &65227866625942670
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1491,7 +1480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitialCharacters:
   - {fileID: 1736001014162898}
+  - {fileID: 0}
   PositionOffset: {x: 0, y: -0.5, z: 0}
+  CallRange: 8
 --- !u!114 &114759622504105882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1507,6 +1498,34 @@ MonoBehaviour:
   Cam: {fileID: 20847774988213560}
   Range: 8.5
   Deadzone: 5
+--- !u!114 &114862655246431922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736001014162898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f8f4f3e809da24683fcbb2348cc4bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pc: {fileID: 1928430489939842}
+  Speed: 7.5
+  frontRayRange: 1
+  belowRayRange: 1
+  hazardRayRange: 3
+  hazardRayAngle: {x: 0, y: -0.55, z: 0.35}
+  safeZoneFromPC: 2
+  animator: {fileID: 95708188159742072}
+  raycastOffset: {x: 0, y: 0.5, z: 0}
+  body: {fileID: 1940858112887370}
+  EffectLove: {fileID: 1494887653194086, guid: d09584218fde3a04a98f5ec72332c1a9, type: 2}
+  EffectDislike: {fileID: 1714779518265792, guid: aa935b37ecf72154e8612344d4e7b803,
+    type: 2}
+  JumpForce: 15
+  JumpNoCheck: 0.1
+  Following: 0
+  MoreGravity: 20
 --- !u!114 &114946452736603310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1716,6 +1735,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135846105604658768
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1736001014162898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!137 &137800316534324282
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
