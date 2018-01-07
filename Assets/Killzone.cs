@@ -34,9 +34,9 @@ public class Killzone : MonoBehaviour {
 
 		if (other.tag == "Suku" && !other.gameObject.GetComponent<IAFollower>().isPlayer)
 		{
+            source.volume = PlayerPrefs.GetFloat("intensityVolume");
 			source.PlayOneShot(deathSound);
 			StartCoroutine(RespawnSuku(other.gameObject));
-
 		}
 	}
 
