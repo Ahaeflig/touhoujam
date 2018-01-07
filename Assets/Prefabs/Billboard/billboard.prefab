@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4347896390474876}
   - component: {fileID: 33039972418810898}
   - component: {fileID: 23774960827878844}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Object080
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65736479604645794}
   - component: {fileID: 65295444642278152}
   - component: {fileID: 114795366581434310}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4953793421508692}
   - component: {fileID: 33715903551806992}
   - component: {fileID: 23749388775566270}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Object079
   m_TagString: Untagged
   m_Icon: {fileID: 0}
