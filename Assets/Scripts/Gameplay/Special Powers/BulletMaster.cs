@@ -21,10 +21,15 @@ public class BulletMaster : MonoBehaviour {
 		if (transform.parent != null && Input.GetButtonDown("Fire") && currentCooldown >= Cooldown)
 		{
 			currentCooldown = 0f;
-			var o = Instantiate(seal, transform.parent.transform.position + transform.parent.transform.forward * 2, transform.rotation);
+			var o = Instantiate(seal, transform.position + Vector3.up * 0.5f + transform.parent.transform.forward * 1, transform.rotation);
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit))
 				o.GetComponent<SealScript>().FixDirection(hit.point);
+			else
+			{
+				o.transform.position = transform.position + transform.forward + Vector3.up * 0.5f;
+				o.transform.rotation = transform.rotation;
+			}
 		}
 
 		if (currentCooldown <= Cooldown)
