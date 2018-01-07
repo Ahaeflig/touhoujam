@@ -121,6 +121,8 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentCharacter.GetComponent<Rigidbody>().useGravity = true;
 		currentCharacter.GetComponent<SphereCollider>().enabled = true;
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = false;
+		currentCharacter.GetComponent<IAFollower>().isPlayer = false;
+
 		currentCharacter = characters[index];
 		currentIndex = index;
 		fromPosition = transform.position;
@@ -130,6 +132,8 @@ public class CharacterSwitcher : MonoBehaviour {
 		GetComponent<Rigidbody>().useGravity = false;
 		GetComponent<Rigidbody>().isKinematic = true;
 		GetComponent<SphereCollider>().enabled = false;
+		GetComponent<IAFollower>().isPlayer = true;
+
 
 		UpdateComponents();
 	}

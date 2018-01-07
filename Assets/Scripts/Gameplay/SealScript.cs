@@ -18,6 +18,7 @@ public class SealScript : MonoBehaviour {
 	private bool hasToggle;
 	private Vector3? otherPosition;
 	private GameObject other;
+	public GameObject pc;
 
 	// Use this for initialization
 	void Start () {
@@ -55,7 +56,9 @@ public class SealScript : MonoBehaviour {
 			if (hasEffect)
 			{
 				target = other;
-				Instantiate(EffectOnEffective, transform);
+				var o = Instantiate(EffectOnEffective, transform.position, transform.rotation);
+				o.transform.LookAt(pc.transform.position);
+				o.transform.Rotate(new Vector3(0, 90, 90), Space.World);
 			}
 		}
 

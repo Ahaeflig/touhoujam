@@ -27,6 +27,7 @@ public class IAFollower : MonoBehaviour {
 	public float JumpNoCheck;
 
 	public bool Following;
+	public bool isPlayer;
 
 	public float MoreGravity;
 
@@ -59,7 +60,7 @@ public class IAFollower : MonoBehaviour {
 		if (Following)
 			transform.LookAt(pcPos + new Vector3(0, -pcPos.y + transform.position.y, 0), Vector3.up);
 
-		if (collisionGround && rayBelow.collider.gameObject.tag == "Wall" && rayBelow.collider.gameObject.GetComponent<IMechanism>() != null)
+		if (collisionGround && rayBelow.collider.gameObject.tag == "Wall" && rayBelow.collider.gameObject.GetComponent<IMechanism>() != null && !isPlayer)
 			transform.position += rayBelow.collider.gameObject.GetComponent<IMechanism>().GetGluedValue();
 		//var b = transform.rotation;
 		//transform.LookAt(pcPos, Vector3.up);

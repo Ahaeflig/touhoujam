@@ -22,6 +22,7 @@ public class BulletMaster : MonoBehaviour {
 		{
 			currentCooldown = 0f;
 			var o = Instantiate(seal, transform.position + Vector3.up * 0.5f + transform.parent.transform.forward * 1, transform.rotation);
+			o.GetComponent<SealScript>().pc = gameObject;
 			RaycastHit hit;
 			if (Physics.Raycast(ray, out hit))
 				o.GetComponent<SealScript>().FixDirection(hit.point);
