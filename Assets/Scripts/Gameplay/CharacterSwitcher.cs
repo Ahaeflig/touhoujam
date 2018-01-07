@@ -17,9 +17,13 @@ public class CharacterSwitcher : MonoBehaviour {
 	public Vector3 PositionOffset;
 
 	public float CallRange;
-	
-	// Use this for initialization
-	void Start () {
+
+    private string SwitchCharacterString = "SwitchCharacter";
+    private string CallCharactersString = "CallCharacters";
+    private string DismissCharacters = "DismissCharacters";
+
+    // Use this for initialization
+    void Start () {
 		currentIndex = 0;
 		characters = new List<GameObject>(InitialCharacters);
 		currentCharacter = characters[0];
@@ -30,6 +34,13 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = true;
 		transition = 1f;
 		Ready = true;
+
+        if (InputController.instance.IsPS4Controller())
+        {
+            SwitchCharacterString = "SwitchCharacter";
+            CallCharactersString = "CallCharactersPS4";
+            DismissCharacters = "DismissCharactersPS4";
+        }
 	}
 
 	internal GameObject Unlink()
@@ -51,7 +62,7 @@ public class CharacterSwitcher : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("SwitchCharacter") && Ready)
+		if (Input.GetButtonDown(SwitchCharacterString) && Ready)
 			SwitchCharacter(currentIndex + 1);
 		if (transition < 1f)
 		{
@@ -64,7 +75,7 @@ public class CharacterSwitcher : MonoBehaviour {
 			CompleteChange(Ready);
 		}
 
-		if (Input.GetButtonDown("CallCharacters"))
+		if (Input.GetButtonDown(CallCharactersString))
 		{
 			foreach (var c in characters)
 			{
@@ -83,7 +94,7 @@ public class CharacterSwitcher : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetButtonDown("DismissCharacters"))
+		if (Input.GetButtonDown(DismissCharacters))
 		{
 			foreach (var c in characters)
 			{
