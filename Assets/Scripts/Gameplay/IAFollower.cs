@@ -118,7 +118,7 @@ public class IAFollower : MonoBehaviour {
 					print("jump");
 					rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
 					isJumping = true;
-					jumpIF = JumpNoCheck;
+					jumpIF = JumpNoCheck / Time.timeScale;
 				}
 			}
 	}

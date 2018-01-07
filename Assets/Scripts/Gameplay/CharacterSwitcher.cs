@@ -93,6 +93,7 @@ public class CharacterSwitcher : MonoBehaviour {
 
 		this.Ready = true;
 		currentCharacter.transform.parent = transform;
+		transform.Translate(-PositionOffset);
 		currentCharacter.transform.localPosition = PositionOffset;
 		currentCharacter.GetComponent<Rigidbody>().useGravity = false;
 		currentCharacter.GetComponent<SphereCollider>().enabled = false;
