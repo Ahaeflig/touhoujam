@@ -11,8 +11,9 @@ public class SwitchController : MonoBehaviour, IActivable {
 	public Material MaterialOff;
 
     public AudioClip soundFx;
+    public AudioClip soundFx2;
 
-	private MechanismInfo info;
+    private MechanismInfo info;
 	public float Timeout;
 	private float currentTimeout;
 	// Use this for initialization
@@ -53,9 +54,11 @@ public class SwitchController : MonoBehaviour, IActivable {
 			GetComponent<Renderer>().material = MaterialOn;
             MusicPlayer.instance.playSong(soundFx);
         }
-        else
+        else { 
 			GetComponent<Renderer>().material = MaterialOff;
-	}
+            MusicPlayer.instance.playSong(soundFx2);
+        }
+    }
 
 	public float ActivateSpecial()
 	{
