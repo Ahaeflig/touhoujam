@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicPlayer : MonoBehaviour {
 
@@ -32,14 +33,16 @@ public class MusicPlayer : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    void OnLevelWasLoaded(int level)
+    {
+        stingSource.clip = stings[level];
+        stingSource.Play();
+    }
+
 
     // Use this for initialization
     void Start () {
-
         stingSource.volume = PlayerPrefs.GetFloat(volumeKey, 0.5f);
-
-        stingSource.clip = stings[0];
-        stingSource.Play();
     }
 	
 	// Update is called once per frame
