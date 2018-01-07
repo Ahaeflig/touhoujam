@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33187650186033832}
   - component: {fileID: 65650152605496296}
   - component: {fileID: 23650946243259788}
+  - component: {fileID: 114469026404540882}
   m_Layer: 0
   m_Name: Outer
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4496904606245934}
   - component: {fileID: 33917145234998738}
-  - component: {fileID: 65037515019442186}
   - component: {fileID: 23471692710467122}
   m_Layer: 0
   m_Name: Inner
@@ -56,10 +56,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4552835441806826}
   - component: {fileID: 95623768003500542}
-  - component: {fileID: 65339085886657696}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997264135984692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.86, y: -1.51, z: 37.37}
+  m_LocalPosition: {x: 126.63, y: 22.71, z: 162.55}
   m_LocalScale: {x: 1.5000002, y: 1.5000002, z: 1.5000004}
   m_Children:
   - {fileID: 4336474471159396}
@@ -187,30 +186,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1957400984793690}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65037515019442186
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1957400984793690}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65339085886657696
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1997264135984692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.27, y: 1.42, z: 1.09}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65650152605496296
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -240,3 +215,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114469026404540882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1045084805598856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149ef51ca7c3dfe4e84d3aa011e95f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  isEnabled: 0
+  MaterialOn: {fileID: 2100000, guid: f15cd687f2916a645bacd2db59e3d737, type: 2}
+  MaterialOff: {fileID: 2100000, guid: 0ce3127ec73ceac4e86cff05da6258ea, type: 2}
+  soundFx: {fileID: 8300000, guid: 0bdf5c542b6fe8449b65753dae410bff, type: 3}
+  Timeout: 0
