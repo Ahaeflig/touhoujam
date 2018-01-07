@@ -58,7 +58,6 @@ public class MusicPlayer : MonoBehaviour {
         stingSource.volume = volume;
         if (sfxSource.isPlaying) { 
             sfxSource.volume = volume;
-            Debug.Log("asd");
         }
     }
 
