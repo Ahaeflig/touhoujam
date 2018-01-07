@@ -16,6 +16,8 @@ public class RelativeBlockTransformation : MonoBehaviour, IMechanism {
 	private Quaternion previousRotation;
 	private Vector3 previousScale;
 	private Rigidbody rb;
+	private Vector3 currentPosition;
+	private Vector3 lastPosition;
 
 
 	public bool Activate(MechanismInfo info)
@@ -31,7 +33,7 @@ public class RelativeBlockTransformation : MonoBehaviour, IMechanism {
 
 	public Vector3 GetGluedValue()
 	{
-		throw new System.NotImplementedException();
+		return currentPosition - lastPosition;
 	}
 
 	// Use this for initialization
@@ -46,7 +48,11 @@ public class RelativeBlockTransformation : MonoBehaviour, IMechanism {
 		{
 			Transition = Mathf.Min(Transition + TransitionSpeed * Time.deltaTime, 1f);
 			if (Translate)
-				transform.position = Vector3.Lerp(previousPosition, previousPosition + Translation, Transition);
+			{
+				lastPosition = transform.position;
+				currentPosition = Vector3.Lerp(previousPosition, previousPosition + Translation, Transition);
+				transform.position = currentPosition;
+			}
 
 			if (Rotate)
 			{

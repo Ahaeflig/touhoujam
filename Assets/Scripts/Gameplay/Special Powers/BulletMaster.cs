@@ -9,6 +9,7 @@ public class BulletMaster : MonoBehaviour {
 	public Camera Cam;
 	private float currentCooldown;
 	public float RangeMax;
+	public bool DebugRange;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +19,14 @@ public class BulletMaster : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Ray ray = Cam.ScreenPointToRay(new Vector3(0.5f * Screen.width, 0.5f * Screen.height));
-		RaycastHit hitDebug;
-		if (Physics.Raycast(ray, out hitDebug, Mathf.Infinity, ~(1 << 2)))
-			Debug.Log(Vector3.Distance(Cam.transform.position, hitDebug.point));
-		else
-			Debug.Log("No target");
+		if (DebugRange)
+		{
+			RaycastHit hitDebug;
+			if (Physics.Raycast(ray, out hitDebug, Mathf.Infinity, ~(1 << 2)))
+				Debug.Log(Vector3.Distance(Cam.transform.position, hitDebug.point));
+			else
+				Debug.Log("No target");
+		}
 
 		Debug.DrawRay(ray.origin, ray.direction * 40, Color.green);
 		if (transform.parent != null && Input.GetButtonDown("Fire") && currentCooldown >= Cooldown)
