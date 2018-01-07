@@ -142,6 +142,7 @@ public class CharacterSwitcher : MonoBehaviour {
 		currentCharacter.GetComponent<SphereCollider>().enabled = true;
 		currentCharacter.GetComponent<Rigidbody>().isKinematic = false;
 		currentCharacter.GetComponent<IAFollower>().isPlayer = false;
+		currentCharacter.GetComponent<IAFollower>().Call(false, false);
 
 		currentCharacter = characters[index];
 		currentIndex = index;

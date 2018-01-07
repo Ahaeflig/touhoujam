@@ -76,8 +76,11 @@ public class TimeAlteration : MonoBehaviour, ISpell {
         }
 		else
 		{
-            MusicPlayer.instance.changeIntensityVolume(PlayerPrefs.GetFloat("intensityVolume"));
-            MusicPlayer.instance.playSong(zwOut);
+			if (Time.timeScale != 1f)
+			{
+				MusicPlayer.instance.changeIntensityVolume(PlayerPrefs.GetFloat("intensityVolume"));
+				MusicPlayer.instance.playSong(zwOut);
+			}
 
             Time.timeScale = 1f;
 			if (transform.parent != null)

@@ -127,12 +127,13 @@ public class IAFollower : MonoBehaviour {
 			}
 	}
 
-	public void Call(bool like)
+	public void Call(bool like, bool playEmote = true)
 	{
-		if (like)
-			Instantiate(EffectLove, gameObject.transform);
-		else
-			Instantiate(EffectDislike, gameObject.transform);
+		if (playEmote)
+			if (like)
+				Instantiate(EffectLove, gameObject.transform);
+			else
+				Instantiate(EffectDislike, gameObject.transform);
 
 		Following = like;
 		if (!Following)
