@@ -7,6 +7,7 @@ TagManager:
   - Switch
   - Wall
   - Evil
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
