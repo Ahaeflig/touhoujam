@@ -9,8 +9,6 @@ public class AutomaticTimer : MonoBehaviour, IActivable {
 	private IMechanism[] scripts;
 	private float timer;
 	public float SequenceTime;
-	public Material MaterialOn;
-	public Material MaterialOff;
 	private bool debugSwitch;
 	private MechanismInfo info;
 
@@ -47,10 +45,6 @@ public class AutomaticTimer : MonoBehaviour, IActivable {
 
 			timer = 0f;
 			debugSwitch = !debugSwitch;
-			if (debugSwitch)
-				GetComponent<Renderer>().material = MaterialOn;
-			else
-				GetComponent<Renderer>().material = MaterialOff;
 		}
 	}
 
