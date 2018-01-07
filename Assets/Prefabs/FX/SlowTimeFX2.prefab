@@ -95,6 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GrowSpeed: 8
-  Goal: {x: 2000, y: 2000, z: 1}
+  Goal: {x: 1000, y: 1000, z: 1}
   Transition: 0
   SetToKill: 0

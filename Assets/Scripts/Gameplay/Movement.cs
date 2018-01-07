@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class Movement : MonoBehaviour {
 	private bool isJumping;
 	public Animator animator;
 	public float RaycastDownRange;
+	public bool FreeCam;
 
 	//Spell
 	public float TimeAffect;
@@ -35,6 +37,8 @@ public class Movement : MonoBehaviour {
 	public Vector3 trueVelocity { get; set; }
 	public float gravityAcc;
 	public Vector3 JumpImpulse { get; set; }
+	public float AdditionalCameraMaxVerticalAngleSin;
+
 	public float AlteredTimeJumpMagicFactor;
 
 	// Use this for initialization
@@ -57,6 +61,11 @@ public class Movement : MonoBehaviour {
 
 		cs = GetComponent<CharacterSwitcher>();
     }
+
+	internal void SetFreeCam(bool v)
+	{
+		FreeCam = v;
+	}
 
 	void FixedUpdate()
 	{
@@ -178,7 +187,7 @@ public class Movement : MonoBehaviour {
 		if (cs.Ready)
 		{
 			cameraTransform.Rotate(Input.GetAxis(RY) * Vector3.right * time * CameraSpeed, Space.Self);
-		if (Mathf.Abs(Mathf.Sin(cameraTransform.eulerAngles.x * Mathf.Deg2Rad)) > CameraMaxVerticalAngleSin )
+		if (Mathf.Abs(Mathf.Sin(cameraTransform.eulerAngles.x * Mathf.Deg2Rad)) > CameraMaxVerticalAngleSin + (FreeCam ? AdditionalCameraMaxVerticalAngleSin: 0))
 			cameraTransform.rotation = cameraRotation;
 		else
 			transform.Rotate(Input.GetAxis(RX) * Vector3.up * time * CameraSpeed, Space.Self);

@@ -31,7 +31,24 @@ public class CharacterSwitcher : MonoBehaviour {
 		transition = 1f;
 		Ready = true;
 	}
-	
+
+	internal GameObject Unlink()
+	{
+		currentCharacter.GetComponent<Rigidbody>().useGravity = true;
+		currentCharacter.GetComponent<SphereCollider>().enabled = true;
+		currentCharacter.GetComponent<Rigidbody>().isKinematic = false;
+		currentCharacter.GetComponent<IAFollower>().isPlayer = false;
+		currentCharacter.transform.parent = null;
+		GetComponent<Movement>().SetFreeCam(true);
+		return currentCharacter;
+	}
+
+	internal void Link(GameObject o)
+	{
+		var i = characters.FindIndex(x => o.Equals(x));
+		SwitchCharacter(i);
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("SwitchCharacter") && Ready)
@@ -92,6 +109,7 @@ public class CharacterSwitcher : MonoBehaviour {
 			return;
 
 		this.Ready = true;
+		currentCharacter.GetComponent<IAFollower>().isPlayer = true;
 		currentCharacter.transform.parent = transform;
 		transform.Translate(-PositionOffset);
 		currentCharacter.transform.localPosition = PositionOffset;
@@ -133,7 +151,6 @@ public class CharacterSwitcher : MonoBehaviour {
 		GetComponent<Rigidbody>().useGravity = false;
 		GetComponent<Rigidbody>().isKinematic = true;
 		GetComponent<SphereCollider>().enabled = false;
-		currentCharacter.GetComponent<IAFollower>().isPlayer = true;
 
 
 		UpdateComponents();
