@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.565798, g: 0.63719285, b: 0.8455882, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.013
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.88235295, g: 0.88235295, b: 0.88235295, a: 1}
@@ -280,7 +280,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4563112368769840, guid: f21a7ffc55d493741a23e600c0799eb5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 7.32
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 4563112368769840, guid: f21a7ffc55d493741a23e600c0799eb5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1259,6 +1259,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114688528291265404, guid: 3ee7bf22898125147ab411754b58674d,
+        type: 2}
+      propertyPath: InitialCharacters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4034119866231554, guid: 3ee7bf22898125147ab411754b58674d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 66.3
@@ -1295,6 +1300,10 @@ Prefab:
         type: 2}
       propertyPath: RangeMax
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1736001014162898, guid: 3ee7bf22898125147ab411754b58674d, type: 2}
+      propertyPath: m_TagString
+      value: Suku
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ee7bf22898125147ab411754b58674d, type: 2}
