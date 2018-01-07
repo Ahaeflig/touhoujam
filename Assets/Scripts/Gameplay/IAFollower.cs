@@ -92,19 +92,22 @@ public class IAFollower : MonoBehaviour {
 			isJumping = false;
 		}
 
-		if (cSpeed > 0.1f)
+		if (Following)
 		{
-			animator.SetBool("isRunning", false);
-			animator.SetBool("isWalking", true);
-		}
-		if (cSpeed > Speed / 2)
-		{
-			animator.SetBool("isRunning", true);
-		}
-		else
-		{
-			animator.SetBool("isRunning", false);
-			animator.SetBool("isWalking", false);
+			if (cSpeed > 0.1f)
+			{
+				animator.SetBool("isRunning", false);
+				animator.SetBool("isWalking", true);
+			}
+			if (cSpeed > Speed / 2)
+			{
+				animator.SetBool("isRunning", true);
+			}
+			else
+			{
+				animator.SetBool("isRunning", false);
+				animator.SetBool("isWalking", false);
+			}
 		}
 
 		if (isFalling || isJumping)
